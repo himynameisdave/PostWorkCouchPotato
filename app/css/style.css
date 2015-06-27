@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  background: #ccc;
+  font-size: 62.5%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+.main {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  height: 50%;
+  width: 96%;
+  transform: translate(-50%, -50%);
+  transition: width 0.225s ease-in-out;
+}
+@media screen and ( min-width: 480px ) {
+  .main {
+    width: 90%;
+  }
+}
+@media screen and ( min-width: 620px ) {
+  .main {
+    width: 85%;
+  }
+}
+@media screen and ( min-width: 767px ) {
+  .main {
+    max-width: 880px;
+  }
+}
+.video-container {
+  height: 0;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  overflow: hidden;
+}
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.video-title {
+  margin: 1.5rem 0;
+  font-weight: 100;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+  transition: font-size 0.345s ease-in-out;
+}
+@media screen and ( min-width: 480px ) {
+  .video-title {
+    font-size: 2.25rem;
+  }
+}
+@media screen and ( min-width: 620px ) {
+  .video-title {
+    font-size: 2.5rem;
+  }
+}
+@media screen and ( min-width: 767px ) {
+  .video-title {
+    font-size: 2.75rem;
+  }
+}
+.footy {
+  padding: 0.5rem 0;
+  position: absolute;
+  bottom: 1rem;
+  text-align: center;
+  width: 100%;
+}
+.footy-text {
+  color: #aaa;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+}
+.footy-text-link {
+  color: #0ac;
+  text-decoration: none;
+  transition: color 0.575s ease-in-out;
+}
+.footy-text-link:hover {
+  color: #bbb;
+}
+.footy-text-link:before {
+  content: '';
+}
