@@ -26,13 +26,15 @@ define(function () {
     },
 
     pruneOldVideos: function() {
-      var newVidList = [];
+      var newVidList = [],
+          now        = Date.now() / 1000,
+          week       = 604800; // two weeks in seconds
       this.videos.forEach(function( val ){
-        // if( val.timestamp < 2WeeksOldTimestamp ){
-        //  newVidList.push(val);
-        // }
+        if( (now - val.time) < week ){
+         newVidList.push(val);
+        }
       });
-      // this.videos = newVidList;
+      this.videos = newVidList;
       this.updateWatchedVideos();
     }
   };

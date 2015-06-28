@@ -2,7 +2,7 @@ define(function () {
   return {
     els: {
       vidTitle:   document.querySelector('.video-title'),
-      vidNextBtn: document.querySelector('.video-next'),
+      vidNextBtn: document.querySelector('.video-button.button-next'),
       vidBox:     document.querySelector('.video-container')
     },
     buildVideoElements: function( vid ){

@@ -28,7 +28,7 @@ define(function (require) {
         //  take the first video and add it to the page
         var watchedVid = {
           name: Videos[0].data.name,
-          time: Date.now() / 1000
+          time: Date.now() / 1000 // date in seconds
         };
         WatchedVideos.addNewWatchedVideo(watchedVid);
         //  now remove that from the Videos array
