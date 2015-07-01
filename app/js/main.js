@@ -17,16 +17,16 @@ define(function (require) {
       Videos = Data.parse( d, WatchedVideos.videos );
 
       //  shows the first video
-      Element.showNextVideo(Videos[0]);
+      Element.displayVideo(Videos[0]);
 
     },
     //  the function that is fired when next btn is clicked
     nextVideoPlz = function(){
+      console.log(Videos[0]);
       //  take the first video and add it to the page
-      var watchedVid = {
-        name: Videos[0].data.name,
-        time: Date.now() / 1000 // date in seconds
-      };
+      var watchedVid = Videos[0];
+          watchedVid.time = Date.now() / 1000; // date in seconds
+
       WatchedVideos.addNewWatchedVideo(watchedVid);
 
       //  now remove that from the Videos array
@@ -40,11 +40,19 @@ define(function (require) {
         Data.fetch( fetchHandler, Videos[0].data.name );
       }
 
-      Element.showNextVideo(Videos[0]);
+      Element.displayVideo(Videos[0]);
+    },
+    prevVideoPlz = function(){
+
+      if( !WatchedVideos.videos.length ) alert("Didn't find any previously watched videos!");
+
+      Element.displayVideo(WatchedVideos.videos[WatchedVideos.videos.length-1]);
     };
 
     //  Setup click events
     Element.els.vidNextBtn.onclick = nextVideoPlz;
+    //  Setup click events
+    Element.els.vidPrevBtn.onclick = prevVideoPlz;
 
 
 

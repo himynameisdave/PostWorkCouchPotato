@@ -7,7 +7,6 @@ define(function () {
     fetch: function( cb, lastFetch ){
 
       var url = "https://www.reddit.com/r/videos/.json?count=25";
-
       //  next bit just adds shit to the url if it's a fetch beyond the first page
       if( lastFetch ){
         url += "&after="+lastFetch;
@@ -51,7 +50,6 @@ define(function () {
       });
 
       return vidList;
-
     }
   };
 });

@@ -3,6 +3,7 @@ define(function () {
     els: {
       vidTitle:   document.querySelector('.video-title'),
       vidNextBtn: document.querySelector('.video-button.button-next'),
+      vidPrevBtn: document.querySelector('.video-button.button-prev'),
       vidBox:     document.querySelector('.video-container')
     },
     unescapeHtml: function (html) {
@@ -26,19 +27,13 @@ define(function () {
 
       return youtubeId;
     },
-    showNextVideo: function( nextVid ){
+    displayVideo: function( nextVid ){
       //  This is ugly af
       var sanitized = nextVid.data.media_embed.content.replace("&lt;", "<").replace("&lt;", "<").replace("&gt;", ">").replace("&gt;", ">");
       //  clear the vid container
       this.els.vidBox.innerHTML = sanitized;
       //  resets the title
       this.els.vidTitle.innerHTML = nextVid.data.title;
-    },
-
-    //  TODO:
-    showLastVideo: function( lastVid ){
-
-
     }
   };
 });
