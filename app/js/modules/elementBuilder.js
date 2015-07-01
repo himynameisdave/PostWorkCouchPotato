@@ -27,15 +27,18 @@ define(function () {
       return youtubeId;
     },
     showNextVideo: function( nextVid ){
-
-
+      //  This is ugly af
       var sanitized = nextVid.data.media_embed.content.replace("&lt;", "<").replace("&lt;", "<").replace("&gt;", ">").replace("&gt;", ">");
-
-
       //  clear the vid container
       this.els.vidBox.innerHTML = sanitized;
       //  resets the title
       this.els.vidTitle.innerHTML = nextVid.data.title;
+    },
+
+    //  TODO:
+    showLastVideo: function( lastVid ){
+
+
     }
   };
 });
