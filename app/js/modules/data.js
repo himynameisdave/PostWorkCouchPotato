@@ -1,21 +1,17 @@
 define(function () {
   return {
     data: null,
-    fetchRound: 1,
     //  just sends the request to fetch the data
     //  cb - callback, mandatory
     //  lastFetch - the id/title of the last fetched item
-    //  incrementFetchRound - if true, we increment which round of fetchery we are on
-    fetch: function( cb, lastFetch, incrementFetchRound ){
+    fetch: function( cb, lastFetch ){
 
-      var url = "https://www.reddit.com/r/videos/.json";
+      var url = "https://www.reddit.com/r/videos/.json?count=25";
 
       //  next bit just adds shit to the url if it's a fetch beyond the first page
-      if( incrementFetchRound ){
-        if( !lastFetch ) throw "Bitch gotta be passing me a valid lastFetch!";
-        url += "?count="+(25*this.fetchRound)+"&after="+lastFetch;
-        console.warn( "We are incrementing the fetch round and the new url is" + url );
-        this.fetchRound++;
+      if( lastFetch ){
+        url += "&after="+lastFetch;
+        console.log( "lastFetch exists, new URL: "+url );
       }
 
       //  The fetch:
