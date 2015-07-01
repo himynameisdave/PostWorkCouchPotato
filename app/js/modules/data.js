@@ -22,6 +22,8 @@ define(function () {
       r.open("get", url , true);
       r.onload = function(xmlEvent){
         this.data = JSON.parse(r.response).data.children;
+        console.warn("HERE COMES LE DATA");
+        console.log(this.data);
         cb( this.data );
       };
       r.send();
@@ -37,7 +39,6 @@ define(function () {
           watchedList = [];
           //  quickly builds just the list of watchedVid names
           watchedVideos.forEach(function(i){ watchedList.push(i.name); });
-
 
 
       data.forEach( function(val){

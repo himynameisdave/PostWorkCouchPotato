@@ -4,7 +4,7 @@ define(function () {
     //  Videos is our locally available list of watched videos
     videos: [],
 
-    //  init is what grabs the 
+    //  init is what grabs the watched vids from localStorage
     init: function(){
       var watchedVideos = localStorage.getItem('watchedVideos');
       if( watchedVideos !== null ){

@@ -87,6 +87,9 @@ gulp.task( 'move-shit', function(){
   gulp.src( './app/config.js' )
     .pipe( gulp.dest( './build/' ) );
 
+  gulp.src( './app/favicon.ico' )
+    .pipe( gulp.dest( './build/' ) );
+
 });
 
 

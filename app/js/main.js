@@ -15,11 +15,6 @@ define(function (require) {
       //  parses for valid links (ie: youtube ones right now)
       Videos = Data.parse( d, WatchedVideos.videos );
 
-      //  builds us our lil iframe element that gets added later.
-      Videos.forEach(function(val, i){
-        Videos[i].iframeElement = Element.buildVideoElements(val.data);
-      });
-
       //  shows the first video
       Element.showNextVideo(Videos[0]);
 

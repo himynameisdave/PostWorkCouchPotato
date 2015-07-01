@@ -5,10 +5,12 @@ define(function () {
       vidNextBtn: document.querySelector('.video-button.button-next'),
       vidBox:     document.querySelector('.video-container')
     },
-    buildVideoElements: function( vid ){
-      var iframe    = [ "<iframe src='https://www.youtube.com/embed/", "' frameborder='0' allowfullscreen></iframe>" ],
-          youtubeId = this.getYoutubeId(vid.url);
-          return iframe[0]+ youtubeId +iframe[1];
+    unescapeHtml: function (html) {
+      var temp = document.createElement("div");
+      temp.innerHTML = html;
+      var result = temp.childNodes[0].nodeValue;
+      temp.removeChild(temp.firstChild);
+      return result;
     },
     //  empties the element passed to it
     emptyElement: function( el ){
@@ -25,8 +27,13 @@ define(function () {
       return youtubeId;
     },
     showNextVideo: function( nextVid ){
+
+
+      var sanitized = nextVid.data.media_embed.content.replace("&lt;", "<").replace("&lt;", "<").replace("&gt;", ">").replace("&gt;", ">");
+
+
       //  clear the vid container
-      this.els.vidBox.innerHTML = nextVid.iframeElement;
+      this.els.vidBox.innerHTML = sanitized;
       //  resets the title
       this.els.vidTitle.innerHTML = nextVid.data.title;
     }
