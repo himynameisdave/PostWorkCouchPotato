@@ -23,12 +23,12 @@ html, body {
 
 
 .main {
-  position: absolute;
-  left: 50%; top: 30%;
-  height: 50%;
-  width: 96%;
-  transform: translate( -50%, -50% );
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+  padding-top: 1rem;
   transition: width 0.225s ease-in-out;
+  width: 96%;
   @media @mq-small {
     width: 90%;
   }
@@ -140,12 +140,12 @@ html, body {
 
 // Footer styles
 .footy {
-  padding: 0.5rem 0;
-  position: absolute;
-  bottom: 0;
   color: #aaa;
+  display: block;
   font-family: @rob;
   line-height: 1rem;
+  margin-top: 4rem;
+  padding: 0.5rem 0;
   text-align: center;
   width: 100%;
 }

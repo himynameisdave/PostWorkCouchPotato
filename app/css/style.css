@@ -12,15 +12,13 @@ body {
   width: 100%;
 }
 .main {
-  position: absolute;
-  left: 50%;
-  top: 30%;
-  height: 50%;
-  width: 96%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+  padding-top: 1rem;
   -webkit-transition: width 0.225s ease-in-out;
           transition: width 0.225s ease-in-out;
+  width: 96%;
 }
 @media screen and ( min-width: 480px ) {
   .main {
@@ -143,12 +141,12 @@ body {
   color: #f1f1f1;
 }
 .footy {
-  padding: 0.5rem 0;
-  position: absolute;
-  bottom: 0;
   color: #aaa;
+  display: block;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   line-height: 1rem;
+  margin-top: 4rem;
+  padding: 0.5rem 0;
   text-align: center;
   width: 100%;
 }
