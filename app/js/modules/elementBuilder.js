@@ -17,16 +17,6 @@ define(function () {
     emptyElement: function( el ){
       el.innerHTML = '';
     },
-    //  doesn't quire fit in this module
-    getYoutubeId: function( url ){
-      var youtubeId = url.split('v=')[1],
-          ampersandPosition = youtubeId.indexOf('&');
-
-      if(ampersandPosition != -1)
-        youtubeId = youtubeId.substring(0, ampersandPosition);
-
-      return youtubeId;
-    },
     displayVideo: function( nextVid ){
       //  This is ugly af
       var sanitized = nextVid.data.media_embed.content.replace("&lt;", "<").replace("&lt;", "<").replace("&gt;", ">").replace("&gt;", ">");

@@ -13,13 +13,13 @@ define(function () {
         console.log( "lastFetch exists, new URL: "+url );
       }
 
+      console.warn( "\nFETCHING FROM THIS URL:\n"+url );
+
       //  The fetch:
       var r = new XMLHttpRequest();
       r.open("get", url , true);
       r.onload = function(xmlEvent){
         this.data = JSON.parse(r.response).data.children;
-        console.warn("HERE COMES LE DATA");
-        console.log(this.data);
         cb( this.data );
       };
       r.send();
