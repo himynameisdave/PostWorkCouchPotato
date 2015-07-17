@@ -31,124 +31,57 @@ define(function (require) {
             //  TODO: lastFetch should really be like a token created at the time of a fetch... just sayin'
           }, WatchedVideos.returnLastFetched() );
 
+        },
+        //  will go and add the Event listeners to the next and prev buttons
+        setupButtonEvents = function(  ){
+
+          DOM.els.vidNextBtn.onclick = function(e){
+            //  TODO check if we're close to the end of FreshVideos
+
+            //  add the currentVideo to watchedVideos
+            WatchedVideos.addNewWatchedVideo(CurrentVideo.video);
+            //  let's set our current video
+            CurrentVideo.video = FreshVideos.videos[0];
+            //  remove it drom the FreshVideos list
+            FreshVideos.videos.shift();
+            //  show the new currentVideo
+            DOM.displayVideo(CurrentVideo.video);
+          };
+
+          DOM.els.vidPrevBtn.onclick = function(e){
+
+            //  TODO: check if we even have any prev videos to go back and look at
+            if( WatchedVideos.videos.length <= 0 )
+              return alert("No previous videos to check out!");
+
+            //  add the currentVideo to freshVideos
+            FreshVideos.addNewFreshVideo(CurrentVideo.video);
+            //  store the length for easy use
+            var l = WatchedVideos.videos.length;
+            //  let's set our current video
+            CurrentVideo.video = WatchedVideos.videos[l-1];
+            //  remove it drom the WatchedVideos list
+            WatchedVideos.videos.pop();
+            //  show the new currentVideo
+            DOM.displayVideo(CurrentVideo.video);
+          };
+
         };
-
-
-
-
 
         //  init should be sync/blocking with it's localStorage call, so it should have everything by the next step
         WatchedVideos.init();
-
         //  call the inital getFreshVideos
         getFreshVideos( function(){
-
-          console.log( FreshVideos );
-          console.log( WatchedVideos );
-
           //  let's set our current video
-          CurrentVideo.video = FreshVideos.videos[0].data;
-
-
-          console.log( CurrentVideo );
-
+          CurrentVideo.video = FreshVideos.videos[0];
+          //  remove it drom the FreshVideos list
+          FreshVideos.videos.shift();
+          //  show the new currentVideo
+          DOM.displayVideo(CurrentVideo.video);
+          //  because this is our first run, we wanna setup our click events now
+          setupButtonEvents();
         });
 
 
-
-
-
-
-
-
-
-    // // this will store our list of current Videos
-    // var Videos,
-    // //  this will be our active video so that we always have it available
-    //     activeVideo;
-
-
-    // //  grabs the watchedVideos from localStorage and populates WatchedVideos.videos array
-    // WatchedVideos.init();
-
-
-
-    // //  handles the fetches
-    // var fetchHandler = function( d ){
-
-    //   //  only if we actually get results
-    //   if( d.length > 0 ){
-    //     //  parses for valid links (ie: youtube ones right now)
-    //     Videos = Data.parse( d, WatchedVideos.videos );
-
-    //     //  shows the first video
-    //     activeVideo = Videos[0];
-    //     Element.displayVideo(Videos[0]);
-    //   }else{
-    //     console.warn("fetchHandler found no data! ");
-    //     Data.fetch( fetchHandler );
-    //   }
-
-    // },
-    // //  the function that is fired when next btn is clicked
-    // nextVideoPlz = function(){
-    //   console.log(Videos[0]);
-    //   //  take the first video and add it to the page
-    //   var watchedVid = Videos[0];
-    //       watchedVid.time = Date.now() / 1000; // date in seconds
-
-    //   WatchedVideos.addNewWatchedVideo(watchedVid);
-
-    //   //  now remove that from the Videos array
-    //   Videos.splice(0, 1);
-
-    //   //  when we're getting close to the end...
-    //   if( Videos.length === 1 ){
-    //     console.info("Videos lenth is less than/equal to 1, fetching new videos!");
-    //     Data.fetch( fetchHandler, Videos[0].data.name );
-    //   }
-
-    //   activeVideo = Videos[0];
-    //   Element.displayVideo(Videos[0]);
-    // },
-    // prevVideoPlz = function(){
-
-    //   if( !WatchedVideos.videos.length )
-    //     return alert("Didn't find any previously watched videos!");
-
-    //   //  coding, whaaaaat?
-    //   var activeId        = activeVideo.data.name,
-    //       watchedInOrder  = WatchedVideos.videos,
-    //       lastWatchedVideo;
-
-    //   //  swap the order for chronologicality
-    //       // watchedInOrder.reverse();
-
-    //   watchedInOrder.forEach(function(val, i){
-    //     if( val.data.name === activeId )
-    //       lastWatchedVideo = watchedInOrder[i+1];
-    //   });
-
-    //   if( !lastWatchedVideo ){
-    //     activeVideo = WatchedVideos.videos[WatchedVideos.videos.length-1];
-    //     Element.displayVideo(WatchedVideos.videos[WatchedVideos.videos.length-1]);
-    //   }else{
-    //     activeVideo = WatchedVideos.videos[lastWatchedVideo];
-    //     Element.displayVideo(WatchedVideos.videos[lastWatchedVideo]);
-    //   }
-
-    // };
-
-    // //  Setup click events
-    // Element.els.vidNextBtn.onclick = nextVideoPlz;
-    // //  Setup click events
-    // Element.els.vidPrevBtn.onclick = prevVideoPlz;
-
-    // //  go grab our reddit data
-    // if( WatchedVideos.videos.length  ){
-    //   Data.fetch( fetchHandler, WatchedVideos.videos[WatchedVideos.videos.length-1].data.name );
-    // }else{
-    //   Data.fetch( fetchHandler );
-    // }
 
 });

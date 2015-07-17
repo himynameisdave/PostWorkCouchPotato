@@ -19,7 +19,11 @@ define(function () {
         cb( JSON.parse(r.response).data.children );
       };
       r.send();
+    },
+    //  used when the user hits the prev button, to inject a video to the beginning of the videos array
+    addNewFreshVideo: function( vid ){
+      this.videos.unshift( vid );
+      //  TODO: maybe take the item out of the localStorage object as well?
     }
-
   };
 });

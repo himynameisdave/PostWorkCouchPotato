@@ -25,5 +25,6 @@ define(function () {
       //  resets the title
       this.els.vidTitle.innerHTML = nextVid.data.title;
     }
+
   };
 });

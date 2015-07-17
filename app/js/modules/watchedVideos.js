@@ -10,14 +10,15 @@ define(function () {
       if( watchedVideos !== null ){
         watchedVideos = JSON.parse(watchedVideos);
         this.videos = watchedVideos.videos;
-        this.pruneOldVideos();
+        // this.pruneOldVideos();
       }
     },
 
     addNewWatchedVideo: function( video ){
+      console.log("adding this to WatchedVideos.videos", video);
       this.videos.push(video);
       this.updateWatchedVideos();
-      this.pruneOldVideos();
+      // this.pruneOldVideos();
     },
 
     updateWatchedVideos: function(){
@@ -26,6 +27,7 @@ define(function () {
     },
 
     pruneOldVideos: function() {
+      //  TODO: this is ripe for an array.map/filter
       var newVidList = [],
           now        = Date.now() / 1000,
           week       = 604800; // two weeks in seconds
