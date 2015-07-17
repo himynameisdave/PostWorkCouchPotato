@@ -1,1 +1,99 @@
-define("../js/modules/watchedVideos.js",[],function(){return{videos:[],init:function(){var e=localStorage.getItem("watchedVideos");null!==e&&(e=JSON.parse(e),this.videos=e.videos)},addNewWatchedVideo:function(e){this.videos.push(e),this.updateWatchedVideos()},updateWatchedVideos:function(){var e={videos:this.videos};localStorage.setItem("watchedVideos",JSON.stringify(e))},pruneOldVideos:function(){var e=[],t=Date.now()/1e3,i=604800;this.videos.forEach(function(o){t-o.time<i&&e.push(o)}),this.videos=e,this.updateWatchedVideos()},returnLastFetched:function(){return this.videos.slice(-1)[0]},returnSimpleWatchedList:function(){return this.videos.map(function(e){return e.data.name})}}}),define("../js/modules/freshVideos.js",[],function(){return{videos:[],lastFetched:!1,fetchVideos:function(e){var t="https://www.reddit.com/r/videos/.json?count=25";this.lastFetched&&(t+="&after="+this.lastFetched),console.log("Fetching, using this url: ",t);var i=new XMLHttpRequest,o=this;i.open("get",t,!0),i.onload=function(t){var d=JSON.parse(i.response).data.children;console.log("Fetching data, using this to set lastFetched: ",d[d.length-1]),o.lastFetched=d[d.length-1].data.name,e(d)},i.send()},addNewFreshVideo:function(e){this.videos.unshift(e)}}}),define("../js/modules/currentVideo.js",[],function(){return{video:{},foundLocalCurrentVid:!1,init:function(){var e=localStorage.getItem("currentVideo");null!==e?(this.foundLocalCurrentVid=!0,e=JSON.parse(e),this.video=e.video):this.foundLocalCurrentVid=!1},changeCurrentVideo:function(e){this.video=e;var t={video:e};localStorage.setItem("currentVideo",JSON.stringify(t))},returnCurrentVideoName:function(){return this.video.data.name},getMediaEmbedData:function(){return this.video.data.media_embed.content.replace("&lt;","<").replace("&lt;","<").replace("&gt;",">").replace("&gt;",">")}}}),define("../js/modules/dom.js",[],function(){return{els:{vidTitle:document.querySelector(".video-title"),vidNextBtn:document.querySelector(".video-button.button-next"),vidPrevBtn:document.querySelector(".video-button.button-prev"),vidBox:document.querySelector(".video-container")},unescapeHtml:function(e){var t=document.createElement("div");t.innerHTML=e;var i=t.childNodes[0].nodeValue;return t.removeChild(t.firstChild),i},emptyElement:function(e){e.innerHTML=""},displayVideo:function(e){var t=e.data.media_embed.content.replace("&lt;","<").replace("&lt;","<").replace("&gt;",">").replace("&gt;",">");this.els.vidBox.innerHTML=t,this.els.vidTitle.innerHTML=e.data.title}}}),define("main",["require","../js/modules/watchedVideos.js","../js/modules/freshVideos.js","../js/modules/currentVideo.js","../js/modules/dom.js"],function(e){var t=e("../js/modules/watchedVideos.js"),i=e("../js/modules/freshVideos.js"),o=e("../js/modules/currentVideo.js"),d=e("../js/modules/dom.js"),n=function(e){i.fetchVideos(function(o){var d=t.returnSimpleWatchedList(),n=o.filter(function(e){return"moderator"!==e.data.distinguished&&"self.videos"!==e.data.domain&&e.data.media_embed.content?d.indexOf(e.data.name)>-1?!1:e:!1});i.videos=n,e&&e()},t.returnLastFetched())},s=function(){d.els.vidNextBtn.onclick=function(e){t.addNewWatchedVideo(o.video),o.changeCurrentVideo(i.videos[0]),i.videos.shift(),d.displayVideo(o.video),0===i.videos.length&&(console.info("FreshVideos.videos.length is 0,",i),n())},d.els.vidPrevBtn.onclick=function(e){if(t.videos.length<=0)return alert("No previous videos to check out!");i.addNewFreshVideo(o.video);var n=t.videos.length;o.changeCurrentVideo(t.videos[n-1]),t.videos.pop(),d.displayVideo(o.video)}};t.init(),o.init(),o.foundLocalCurrentVid&&(console.log("found a CurrentVideo"),d.displayVideo(o.video)),n(function(){o.foundLocalCurrentVid||(o.changeCurrentVideo(i.videos[0]),i.videos.shift(),d.displayVideo(o.video)),s()})});
+define(function (require) {
+
+  //  Require in our modules
+  var WatchedVideos = require('../js/modules/watchedVideos.js'),
+      FreshVideos   = require('../js/modules/freshVideos.js'),
+      CurrentVideo  = require('../js/modules/currentVideo.js'),
+      DOM           = require('../js/modules/dom.js'),
+      //  can be used to go fetch new vids anytime...?
+      //  accepts a callback for when things are done
+      //  TODO: lastFetchOverride should be temporary
+      getFreshVideos = function( cb ){
+        //  fetches the FreshVideos, while also passing in the last fetched video
+        FreshVideos.fetchVideos( function ( vids ){
+          //  get our list of vid.name data for comparisons
+          var watched = WatchedVideos.returnSimpleWatchedList();
+          //  returns a pruned array of unwatched, non mod posts
+          var squeakyFreshVids = vids.filter(function(vid){
+            //  if not a mod/self post/has embed content
+            if( vid.data.distinguished !== 'moderator' && vid.data.domain !== 'self.videos' && vid.data.media_embed.content ){
+              //  if it's a watched vid, return false, otherwise its vaild
+              if( watched.indexOf( vid.data.name ) > -1 )
+                return false;
+              else
+                return vid;
+            }else{ return false; }
+          });
+          //  reset the global freshvideos list
+          FreshVideos.videos = squeakyFreshVids;
+          //  and call our callback if it was provided
+          if( cb ){ cb(); }
+
+          //  TODO: lastFetch should really be like a token created at the time of a fetch... just sayin'
+        }, WatchedVideos.returnLastFetched() );
+
+      },
+      //  will go and add the Event listeners to the next and prev buttons
+      setupButtonEvents = function(  ){
+
+        DOM.els.vidNextBtn.onclick = function(e){
+
+          //  add the currentVideo to watchedVideos
+          WatchedVideos.addNewWatchedVideo(CurrentVideo.video);
+          //  let's set our current video
+          CurrentVideo.changeCurrentVideo(FreshVideos.videos[0]);
+          //  remove it drom the FreshVideos list
+          FreshVideos.videos.shift();
+          //  show the new currentVideo
+          DOM.displayVideo(CurrentVideo.video);
+
+          //  TODO: check if we're close to the end of FreshVideos
+          if( FreshVideos.videos.length === 0 ){
+            console.info("FreshVideos.videos.length is 0,", FreshVideos );
+            getFreshVideos();
+          }
+
+        };
+
+        DOM.els.vidPrevBtn.onclick = function(e){
+          //  check if we even have any prev videos to go back and look at
+          if( WatchedVideos.videos.length <= 0 )
+            return alert("No previous videos to check out!");
+
+          //  add the currentVideo to freshVideos
+          FreshVideos.addNewFreshVideo(CurrentVideo.video);
+          //  store the length for easy use
+          var l = WatchedVideos.videos.length;
+          //  let's set our current video
+          CurrentVideo.changeCurrentVideo(WatchedVideos.videos[l-1]);
+          //  remove it drom the WatchedVideos list
+          WatchedVideos.videos.pop();
+          //  show the new currentVideo
+          DOM.displayVideo(CurrentVideo.video);
+        };
+
+      };
+
+      //  init should be sync/blocking with it's localStorage call, so it should have everything by the next step
+      WatchedVideos.init();
+      //  init CurrentVideo too
+      CurrentVideo.init();
+      //  if there is a currentVideo stored, we will go ahead and display it
+      if( CurrentVideo.foundLocalCurrentVid ){
+        console.log("found a CurrentVideo");
+        DOM.displayVideo(CurrentVideo.video);
+      }
+
+      //  call the inital getFreshVideos
+      getFreshVideos(function(){
+        if( !CurrentVideo.foundLocalCurrentVid ){
+          //  this is sort of a repeat of the nextButton function
+          CurrentVideo.changeCurrentVideo(FreshVideos.videos[0]);
+          FreshVideos.videos.shift();
+          DOM.displayVideo(CurrentVideo.video);
+        }
+        //  setup our button events when videos have been
+        setupButtonEvents();
+      });
+
+});

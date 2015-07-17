@@ -47,7 +47,7 @@ gulp.task( 'build', [ 'require', 'build-css', 'html-me', 'move-shit' ] )
 
 gulp.task( 'require', function(){
 
-  return plug.requirejs({
+ /* return plug.requirejs({
       baseUrl: './app/js/',
       name:    'main',
       out:     'main.js'
@@ -55,6 +55,12 @@ gulp.task( 'require', function(){
     })
     .pipe(plug.uglify())
     .pipe(gulp.dest('./build/js/'));
+  */
+
+  gulp.src( './app/js/**/*' )
+    .pipe( gulp.dest( './build/js' ) );
+
+
 });
 
 gulp.task( 'build-css', [ 'compile-css' ], function(){
