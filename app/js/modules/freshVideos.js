@@ -2,6 +2,8 @@ define(function () {
   return {
     //  the videos list that gets populated when we fetch
     videos: [],
+    //  TODO: will store the lastFetched item
+    lastFetched: "",
     //  fetchVideos goes and grabs a fresh round of videos
     //  is literally just the fetch and nothing more
     fetchVideos: function( cb, lastFetched ) {
@@ -16,6 +18,9 @@ define(function () {
       var r = new XMLHttpRequest();
       r.open("get", url , true);
       r.onload = function(xmlEvent){
+        console.log("\n\nPAYLOAD\n", JSON.parse(r.response).data.children);
+
+        
         cb( JSON.parse(r.response).data.children );
       };
       r.send();
