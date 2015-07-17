@@ -1,96 +1,154 @@
 define(function (require) {
 
-    var Data          = require('../js/modules/data.js'),
-        WatchedVideos = require('../js/modules/watchedVideos.js'),
-        Element       = require('../js/modules/elementBuilder.js');
+    //  Require in our modules
+    var WatchedVideos = require('../js/modules/watchedVideos.js'),
+        FreshVideos   = require('../js/modules/freshVideos.js'),
+        CurrentVideo  = require('../js/modules/currentVideo.js'),
+        DOM           = require('../js/modules/dom.js'),
+        //  can be used to go fetch new vids anytime...?
+        //  accepts a callback for when things are done
+        getFreshVideos = function( cb ){
+          //  fetches the FreshVideos, while also passing in the last fetched video
+          FreshVideos.fetchVideos( function ( vids ){
+            //  get our list of vid.name data for comparisons
+            var watched = WatchedVideos.returnSimpleWatchedList();
+            //  returns a pruned array of unwatched, non mod posts
+            var squeakyFreshVids = vids.filter(function(vid){
+              //  if not a mod/self post/has embed content
+              if( vid.data.distinguished !== 'moderator' && vid.data.domain !== 'self.videos' && vid.data.media_embed.content ){
+                //  if it's a watched vid, return false, otherwise its vaild
+                if( watched.indexOf( vid.data.name ) > -1 )
+                  return false;
+                else
+                  return vid;
+              }else{ return false; }
+            });
+            //  reset the global freshvideos list
+            FreshVideos.videos = squeakyFreshVids;
+            //  and call our callback if it was provided
+            if( cb ){ cb(); }
 
-    // this will store our list of current Videos
-    var Videos,
-    //  this will be our active video so that we always have it available
-        activeVideo;
+            //  TODO: lastFetch should really be like a token created at the time of a fetch... just sayin'
+          }, WatchedVideos.returnLastFetched() );
 
-
-    //  grabs the watchedVideos from localStorage and populates WatchedVideos.videos array
-    WatchedVideos.init();
+        };
 
 
 
-    //  handles the fetches
-    var fetchHandler = function( d ){
 
-      //  only if we actually get results
-      if( d.length > 0 ){
-        //  parses for valid links (ie: youtube ones right now)
-        Videos = Data.parse( d, WatchedVideos.videos );
 
-        //  shows the first video
-        activeVideo = Videos[0];
-        Element.displayVideo(Videos[0]);
-      }else{
-        console.warn("fetchHandler found no data! ");
-        Data.fetch( fetchHandler );
-      }
+        //  init should be sync/blocking with it's localStorage call, so it should have everything by the next step
+        WatchedVideos.init();
 
-    },
-    //  the function that is fired when next btn is clicked
-    nextVideoPlz = function(){
-      console.log(Videos[0]);
-      //  take the first video and add it to the page
-      var watchedVid = Videos[0];
-          watchedVid.time = Date.now() / 1000; // date in seconds
+        //  call the inital getFreshVideos
+        getFreshVideos( function(){
 
-      WatchedVideos.addNewWatchedVideo(watchedVid);
+          console.log( FreshVideos );
+          console.log( WatchedVideos );
 
-      //  now remove that from the Videos array
-      Videos.splice(0, 1);
+          //  let's set our current video
+          CurrentVideo.video = FreshVideos.videos[0].data;
 
-      //  when we're getting close to the end...
-      if( Videos.length === 1 ){
-        console.info("Videos lenth is less than/equal to 1, fetching new videos!");
-        Data.fetch( fetchHandler, Videos[0].data.name );
-      }
 
-      activeVideo = Videos[0];
-      Element.displayVideo(Videos[0]);
-    },
-    prevVideoPlz = function(){
+          console.log( CurrentVideo );
 
-      if( !WatchedVideos.videos.length )
-        return alert("Didn't find any previously watched videos!");
+        });
 
-      //  coding, whaaaaat?
-      var activeId        = activeVideo.data.name,
-          watchedInOrder  = WatchedVideos.videos,
-          lastWatchedVideo;
 
-      //  swap the order for chronologicality
-          // watchedInOrder.reverse();
 
-      watchedInOrder.forEach(function(val, i){
-        if( val.data.name === activeId )
-          lastWatchedVideo = watchedInOrder[i+1];
-      });
 
-      if( !lastWatchedVideo ){
-        activeVideo = WatchedVideos.videos[WatchedVideos.videos.length-1];
-        Element.displayVideo(WatchedVideos.videos[WatchedVideos.videos.length-1]);
-      }else{
-        activeVideo = WatchedVideos.videos[lastWatchedVideo];
-        Element.displayVideo(WatchedVideos.videos[lastWatchedVideo]);
-      }
 
-    };
 
-    //  Setup click events
-    Element.els.vidNextBtn.onclick = nextVideoPlz;
-    //  Setup click events
-    Element.els.vidPrevBtn.onclick = prevVideoPlz;
 
-    //  go grab our reddit data
-    if( WatchedVideos.videos.length  ){
-      Data.fetch( fetchHandler, WatchedVideos.videos[WatchedVideos.videos.length-1].data.name );
-    }else{
-      Data.fetch( fetchHandler );
-    }
+
+
+    // // this will store our list of current Videos
+    // var Videos,
+    // //  this will be our active video so that we always have it available
+    //     activeVideo;
+
+
+    // //  grabs the watchedVideos from localStorage and populates WatchedVideos.videos array
+    // WatchedVideos.init();
+
+
+
+    // //  handles the fetches
+    // var fetchHandler = function( d ){
+
+    //   //  only if we actually get results
+    //   if( d.length > 0 ){
+    //     //  parses for valid links (ie: youtube ones right now)
+    //     Videos = Data.parse( d, WatchedVideos.videos );
+
+    //     //  shows the first video
+    //     activeVideo = Videos[0];
+    //     Element.displayVideo(Videos[0]);
+    //   }else{
+    //     console.warn("fetchHandler found no data! ");
+    //     Data.fetch( fetchHandler );
+    //   }
+
+    // },
+    // //  the function that is fired when next btn is clicked
+    // nextVideoPlz = function(){
+    //   console.log(Videos[0]);
+    //   //  take the first video and add it to the page
+    //   var watchedVid = Videos[0];
+    //       watchedVid.time = Date.now() / 1000; // date in seconds
+
+    //   WatchedVideos.addNewWatchedVideo(watchedVid);
+
+    //   //  now remove that from the Videos array
+    //   Videos.splice(0, 1);
+
+    //   //  when we're getting close to the end...
+    //   if( Videos.length === 1 ){
+    //     console.info("Videos lenth is less than/equal to 1, fetching new videos!");
+    //     Data.fetch( fetchHandler, Videos[0].data.name );
+    //   }
+
+    //   activeVideo = Videos[0];
+    //   Element.displayVideo(Videos[0]);
+    // },
+    // prevVideoPlz = function(){
+
+    //   if( !WatchedVideos.videos.length )
+    //     return alert("Didn't find any previously watched videos!");
+
+    //   //  coding, whaaaaat?
+    //   var activeId        = activeVideo.data.name,
+    //       watchedInOrder  = WatchedVideos.videos,
+    //       lastWatchedVideo;
+
+    //   //  swap the order for chronologicality
+    //       // watchedInOrder.reverse();
+
+    //   watchedInOrder.forEach(function(val, i){
+    //     if( val.data.name === activeId )
+    //       lastWatchedVideo = watchedInOrder[i+1];
+    //   });
+
+    //   if( !lastWatchedVideo ){
+    //     activeVideo = WatchedVideos.videos[WatchedVideos.videos.length-1];
+    //     Element.displayVideo(WatchedVideos.videos[WatchedVideos.videos.length-1]);
+    //   }else{
+    //     activeVideo = WatchedVideos.videos[lastWatchedVideo];
+    //     Element.displayVideo(WatchedVideos.videos[lastWatchedVideo]);
+    //   }
+
+    // };
+
+    // //  Setup click events
+    // Element.els.vidNextBtn.onclick = nextVideoPlz;
+    // //  Setup click events
+    // Element.els.vidPrevBtn.onclick = prevVideoPlz;
+
+    // //  go grab our reddit data
+    // if( WatchedVideos.videos.length  ){
+    //   Data.fetch( fetchHandler, WatchedVideos.videos[WatchedVideos.videos.length-1].data.name );
+    // }else{
+    //   Data.fetch( fetchHandler );
+    // }
 
 });

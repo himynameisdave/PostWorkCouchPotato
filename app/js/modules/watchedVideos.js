@@ -36,6 +36,19 @@ define(function () {
       });
       this.videos = newVidList;
       this.updateWatchedVideos();
+    },
+    //  simplifies grabbing that last watched video
+    returnLastFetched: function(){
+      //  returns undefined if array is empty
+      //  juxed this one-liner from here:
+      //  http://stackoverflow.com/a/12099341/4060044
+      return this.videos.slice(-1)[0];
+    },
+    //  returns a simplified list of video.name data for easier comparison later
+    returnSimpleWatchedList: function(){
+      return this.videos.map(function( vid ){
+        return vid.data.name;
+      });
     }
   };
 });
