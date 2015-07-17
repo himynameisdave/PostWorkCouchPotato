@@ -12,15 +12,20 @@ define(function () {
 
       //  if a lastFetched was provided, we go ahead and add that here
       if( this.lastFetched )
-        url += "&after="+this.lastFetched;
+        url += ("&after="+this.lastFetched);
+
+      console.log("Fetching, using this url: ", url);
 
       //  The fetch:
-      var r = new XMLHttpRequest();
+      var r = new XMLHttpRequest(),
+      //  This hoisting, ugly af
+          T = this;
       r.open("get", url , true);
       r.onload = function(xmlEvent){
         var data = JSON.parse(r.response).data.children;
+        console.log("Fetching data, using this to set lastFetched: ", data[data.length-1]);
         //  setting the lastFetched for future use
-        this.lastFetched = data[data.length-1].data.name;
+        T.lastFetched = data[data.length-1].data.name;
         //  fire our callback using the data
         cb( data );
       };

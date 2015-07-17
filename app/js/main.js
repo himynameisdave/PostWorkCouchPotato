@@ -37,11 +37,6 @@ define(function (require) {
       setupButtonEvents = function(  ){
 
         DOM.els.vidNextBtn.onclick = function(e){
-          //  TODO: check if we're close to the end of FreshVideos
-          if( FreshVideos.videos.length === 1 ){
-            console.info("FreshVideos.videos.length is 0,", FreshVideos );
-            getFreshVideos();
-          }
 
           //  add the currentVideo to watchedVideos
           WatchedVideos.addNewWatchedVideo(CurrentVideo.video);
@@ -52,6 +47,11 @@ define(function (require) {
           //  show the new currentVideo
           DOM.displayVideo(CurrentVideo.video);
 
+          //  TODO: check if we're close to the end of FreshVideos
+          if( FreshVideos.videos.length === 0 ){
+            console.info("FreshVideos.videos.length is 0,", FreshVideos );
+            getFreshVideos();
+          }
 
         };
 
