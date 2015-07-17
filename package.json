@@ -1,6 +1,6 @@
 {
-  "name": "rtv",
-  "version": "0.0.1",
+  "name": "watchddit",
+  "version": "1.0.0",
   "description": "Simplifies watching r/videos.",
   "main": "gulpfile.js",
   "private": "true",
