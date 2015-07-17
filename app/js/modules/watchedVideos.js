@@ -15,7 +15,6 @@ define(function () {
     },
 
     addNewWatchedVideo: function( video ){
-      console.log("adding this to WatchedVideos.videos", video);
       this.videos.push(video);
       this.updateWatchedVideos();
       // this.pruneOldVideos();

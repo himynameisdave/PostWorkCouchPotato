@@ -7,7 +7,12 @@ define(function (require) {
         DOM           = require('../js/modules/dom.js'),
         //  can be used to go fetch new vids anytime...?
         //  accepts a callback for when things are done
-        getFreshVideos = function( cb ){
+        //  TODO: lastFetchOverride should be temporary
+        getFreshVideos = function( cb, lastFetchOverride ){
+          if(!lastFetchOverride)
+            lastFetchOverride = WatchedVideos.returnLastFetched();
+
+
           //  fetches the FreshVideos, while also passing in the last fetched video
           FreshVideos.fetchVideos( function ( vids ){
             //  get our list of vid.name data for comparisons
@@ -29,14 +34,18 @@ define(function (require) {
             if( cb ){ cb(); }
 
             //  TODO: lastFetch should really be like a token created at the time of a fetch... just sayin'
-          }, WatchedVideos.returnLastFetched() );
+          }, lastFetchOverride );
 
         },
         //  will go and add the Event listeners to the next and prev buttons
         setupButtonEvents = function(  ){
 
           DOM.els.vidNextBtn.onclick = function(e){
-            //  TODO check if we're close to the end of FreshVideos
+            //  TODO: check if we're close to the end of FreshVideos
+            if( FreshVideos.videos.length === 1 ){
+              console.info("FreshVideos.videos.length is 0,", FreshVideos );
+              getFreshVideos(null, FreshVideos.videos[0].data.name);
+            }
 
             //  add the currentVideo to watchedVideos
             WatchedVideos.addNewWatchedVideo(CurrentVideo.video);
@@ -46,11 +55,12 @@ define(function (require) {
             FreshVideos.videos.shift();
             //  show the new currentVideo
             DOM.displayVideo(CurrentVideo.video);
+
+
           };
 
           DOM.els.vidPrevBtn.onclick = function(e){
-
-            //  TODO: check if we even have any prev videos to go back and look at
+            //  check if we even have any prev videos to go back and look at
             if( WatchedVideos.videos.length <= 0 )
               return alert("No previous videos to check out!");
 
