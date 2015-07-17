@@ -3,25 +3,26 @@ define(function () {
     //  the videos list that gets populated when we fetch
     videos: [],
     //  TODO: will store the lastFetched item
-    lastFetched: "",
+    lastFetched: false,
     //  fetchVideos goes and grabs a fresh round of videos
     //  is literally just the fetch and nothing more
-    fetchVideos: function( cb, lastFetched ) {
+    fetchVideos: function( cb ) {
       //  our base url - always want a 25 count
       var url = "https://www.reddit.com/r/videos/.json?count=25";
 
       //  if a lastFetched was provided, we go ahead and add that here
-      if( lastFetched )
-        url += "&after="+lastFetched;
+      if( this.lastFetched )
+        url += "&after="+this.lastFetched;
 
       //  The fetch:
       var r = new XMLHttpRequest();
       r.open("get", url , true);
       r.onload = function(xmlEvent){
-        console.log("\n\nPAYLOAD\n", JSON.parse(r.response).data.children);
-
-        
-        cb( JSON.parse(r.response).data.children );
+        var data = JSON.parse(r.response).data.children;
+        //  setting the lastFetched for future use
+        this.lastFetched = data[data.length-1].data.name;
+        //  fire our callback using the data
+        cb( data );
       };
       r.send();
     },
