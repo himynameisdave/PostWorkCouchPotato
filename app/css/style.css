@@ -93,6 +93,10 @@ body {
   text-shadow: 0 0 2px rgba(151, 151, 151, 0.5);
   -webkit-transition: box-shadow 0.475s ease-in-out, background-color 0.35s ease-in-out, color 0.35s ease-in-out;
           transition: box-shadow 0.475s ease-in-out, background-color 0.35s ease-in-out, color 0.35s ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   width: 100%;
 }
 .video-button:focus {
