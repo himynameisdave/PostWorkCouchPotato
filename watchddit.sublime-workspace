@@ -1,0 +1,1274 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pos",
+				"postProcessors"
+			],
+			[
+				"vretta",
+				"vrettaBlue"
+			],
+			[
+				"set",
+				"setName"
+			],
+			[
+				"font-",
+				"font-weight"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"padding-",
+				"padding-top"
+			],
+			[
+				"sa",
+				"sayLow"
+			],
+			[
+				"le",
+				"letter-spacing"
+			],
+			[
+				"back",
+				"background-image"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"margin-",
+				"margin-bottom"
+			],
+			[
+				"border-bottom",
+				"border-bottom-width"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"bor",
+				"border-color"
+			],
+			[
+				"paddin",
+				"padding-top"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"border-left-",
+				"border-left-style"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"backgo",
+				"background"
+			],
+			[
+				"broder",
+				"border-radius"
+			],
+			[
+				"backgoru",
+				"background-color"
+			],
+			[
+				"border-top",
+				"border-top-left-radius"
+			],
+			[
+				"border-le",
+				"border-left-radius"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"background",
+				"background-image"
+			],
+			[
+				"bacg",
+				"background-size"
+			],
+			[
+				"bacgr",
+				"background-image"
+			],
+			[
+				"data-track",
+				"data-track-label"
+			],
+			[
+				"data-",
+				"data-track-action"
+			],
+			[
+				"Ana",
+				"AnalyticsTrack"
+			],
+			[
+				"data",
+				"data-track-action"
+			],
+			[
+				"track",
+				"trackAction"
+			],
+			[
+				"ana",
+				"analyticsEvent"
+			],
+			[
+				"ala",
+				"analyticsTrack"
+			],
+			[
+				"trh",
+				"thread"
+			],
+			[
+				"data-track-a",
+				"data-track-category"
+			],
+			[
+				"send",
+				"sendEvent"
+			],
+			[
+				"box-s",
+				"box-sizing"
+			],
+			[
+				"background-",
+				"background-size"
+			],
+			[
+				"border-",
+				"border-box"
+			],
+			[
+				"min-",
+				"min-width"
+			],
+			[
+				"marg",
+				"margin-right"
+			],
+			[
+				"paddi",
+				"padding-top"
+			],
+			[
+				"ma",
+				"margin-right"
+			],
+			[
+				"border",
+				"border-top"
+			],
+			[
+				"backgorund",
+				"background-size"
+			],
+			[
+				"colr",
+				"color-10"
+			],
+			[
+				"list-s",
+				"list-style"
+			],
+			[
+				"pading-",
+				"padding-bottom"
+			],
+			[
+				"text-",
+				"text-transform"
+			],
+			[
+				"max-",
+				"max-width"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"pso",
+				"position"
+			],
+			[
+				"strto",
+				"strtolower"
+			],
+			[
+				"mat",
+				"margin-right"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"price",
+				"price_points"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"backgro",
+				"background-repeat"
+			],
+			[
+				"name",
+				"namespace"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"font-st",
+				"font-stack-5"
+			],
+			[
+				"pa",
+				"padding-left"
+			],
+			[
+				"border-bo",
+				"border-bottom-left-radius"
+			],
+			[
+				"marign-",
+				"margin-top"
+			],
+			[
+				"color",
+				"color-5"
+			],
+			[
+				"window",
+				"windowH"
+			],
+			[
+				"offse",
+				"offsetY"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
+				"backgroun",
+				"background-position"
+			],
+			[
+				"csu",
+				"customEvent"
+			],
+			[
+				"questions",
+				"questions_asked"
+			],
+			[
+				"dimen",
+				"dimension1"
+			],
+			[
+				"anim",
+				"animDur"
+			],
+			[
+				"js-mo",
+				"js-open-modal"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"out",
+				"outline-color"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"opt",
+				"option	Tag"
+			],
+			[
+				"inlien",
+				"inline-block"
+			],
+			[
+				"mRGIN-",
+				"margin-bottom"
+			],
+			[
+				"clean",
+				"cleanCSS"
+			],
+			[
+				"bottom",
+				"padding-bottom"
+			],
+			[
+				"boredr",
+				"border-box"
+			],
+			[
+				"vd-",
+				"vd-header-logo"
+			],
+			[
+				"bacl",
+				"background-color"
+			],
+			[
+				"bck",
+				"background"
+			],
+			[
+				"getElemen",
+				"getElementsByClassName"
+			],
+			[
+				"val",
+				"validateForm"
+			],
+			[
+				"add",
+				"addEventListener"
+			],
+			[
+				"ba",
+				"background-position"
+			],
+			[
+				"box-",
+				"box-sizing"
+			],
+			[
+				"rel",
+				"reload"
+			],
+			[
+				"compile",
+				"compile-me"
+			],
+			[
+				"g",
+				"gulp"
+			],
+			[
+				"dele",
+				"deletedFiles"
+			],
+			[
+				"log",
+				"loggit"
+			],
+			[
+				"concat",
+				"concatCss"
+			],
+			[
+				"css",
+				"csscomb"
+			],
+			[
+				"error",
+				"errorLog"
+			],
+			[
+				"boot",
+				"bootstrap"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"user",
+				"userInputs"
+			],
+			[
+				"default",
+				"default_icon"
+			],
+			[
+				"____",
+				"____"
+			],
+			[
+				"padi",
+				"padding-left"
+			],
+			[
+				"break-",
+				"break-desktop"
+			],
+			[
+				"logo",
+				"logo-width"
+			],
+			[
+				"top",
+				"top-text"
+			],
+			[
+				"topba",
+				"topbar-height"
+			],
+			[
+				"small",
+				"small-font"
+			],
+			[
+				"MA",
+				"margin-top"
+			],
+			[
+				"APP",
+				"appearance-none"
+			],
+			[
+				"app",
+				"appearance-none"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"over",
+				"overflow-y"
+			],
+			[
+				"de",
+				"break-desktop"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"call",
+				"callbackUrl"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "gulpfile.js",
+			"settings":
+			{
+				"buffer_size": 2042,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Pakc",
+				"Package Control: List Packages"
+			],
+			[
+				"Install",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Pac",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Set Syntax: HTML (Erlang)"
+			]
+		],
+		"width": 516.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+	],
+	"file_history":
+	[
+		"/Users/dlunny/Desktop/github-himynameisdave/TODO-Dave/tmp/css/core.css",
+		"/Users/dlunny/Desktop/github-himynameisdave/TODO-Dave/src/css/core/_base.less",
+		"/Users/dlunny/Desktop/github-himynameisdave/TODO-Dave/src/css/core/_mixins.less",
+		"/Users/dlunny/Desktop/github-himynameisdave/TODO-Dave/src/css/core/_reset.less",
+		"/Users/dlunny/Desktop/github-himynameisdave/TODO-Dave/README.md",
+		"/Users/dlunny/Desktop/github-himynameisdave/TODO-Dave/src/css/configs/default/_layouts.less",
+		"/Users/dlunny/Desktop/github-himynameisdave/TODO-Dave/src/css/configs/default/_typography.less",
+		"/Users/dlunny/Desktop/github-himynameisdave/TODO-Dave/src/css/configs/default/_colors.less",
+		"/Users/dlunny/Desktop/github-himynameisdave/TODO-Dave/src/css/configs/default/_images.less",
+		"/Users/dlunny/Desktop/github-himynameisdave/TODO-Dave/src/css/configs/default/_icons.less",
+		"/Users/dlunny/Desktop/github-himynameisdave/TODO-Dave/src/lib/requirejs/require.min.js",
+		"/Users/dlunny/Desktop/github-himynameisdave/TODO-Dave/.bowerrc",
+		"/Users/dlunny/Desktop/github-himynameisdave/TODO-Dave/bower_components/react/react-with-addons.js",
+		"/Users/dlunny/Desktop/github-himynameisdave/TODO-Dave/package.json",
+		"/Users/dlunny/Desktop/github-himynameisdave/TODO-Dave/.gitignore",
+		"/Users/dlunny/fct/generator-tour/app/templates/_gruntfile.js",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/beta.blacktryst.php",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/default.blacktryst.php",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/Shared/templates/_notices.blacktryst.php",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/Shared/templates/_soft_verify_nag.blacktryst.php",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/Shared/templates/_soft_verify_nag.blacktryst.com",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/Shared/templates/_datacollect.blacktryst.php",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/Activation/templates/step2.blacktryst.php",
+		"/Users/dlunny/fct/generator-tour/package.json",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sexplaycam/desktop/css/home.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/Shared/templates/_notices.blackbook.mobile.php",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blacktryst/css/modules/_button.sass",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/Shared/templates/_soft_verify_nag.ihookup.php",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/gcruise/mobile/package.json",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blacktryst/temp/css/core.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blacktryst/package.json",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blacktryst/css/modules/_alerts.sass",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/default.sweetd.php",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sweetd/desktop/temp/css/screen.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sweetd/desktop/css/screen/_miscellaneous.sass",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blacktryst/node_modules/grunt-sass/node_modules/node-sass/package.json",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blacktryst/node_modules/grunt-sass/package.json",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blacktryst/css/modules/_form.sass",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/default.ihookup.mobile.php",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/default.sweetd.mobile.php",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/desktop/css/forms.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/Shared/templates/_soft_verify_nag.sweetd.mobile.php",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sweetd/mobile/css/modules/_alerts.sass",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sweetd/mobile/css/modules/_forms.sass",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sweetd/mobile/css/modules/_buttons.sass",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sweetd/desktop/css/screen.sass",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sweetd/desktop/css/screen/_forms.sass",
+		"/Users/dlunny/Desktop/aww-new-tab/script.js",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/default.ihookup.php",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/widget_email_verify.blackbook.tpl",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sexplaycam/desktop/css/forms.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/default.blackbook.tpl",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/mobile/css/modules/buttons/_theme.scss",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/mobile/css/modules/forms/_theme.scss",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/mobile/css/modules/alerts/_modifier.scss",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/default.blackbook.mobile.php",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/gcruise/desktop/css/forms.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sexplaycam/mobile/css/modules/buttons/_theme.scss",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sexplaycam/mobile/css/modules/forms/_theme.scss",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sexplaycam/mobile/css/modules/alerts/_theme.scss",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blackbook/desktop/css/forms.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blackbook/mobile/css/modules/buttons/_theme.scss",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/gcruise/mobile/css/modules/buttons/_theme.scss",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/gcruise/mobile/css/modules/forms/_theme.scss",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blackbook/mobile/css/modules/forms/_theme.scss",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blackbook/mobile/css/modules/forms/_modifier.scss",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blackbook/mobile/css/modules/forms/_base.scss",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/desktop/css/screen/_miscellaneous.sass",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blacktryst/Gruntfile.coffee",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/mobile/css/modules/_alerts.sass",
+		"/Users/dlunny/Desktop/alex.js",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/desktop/package.json",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/desktop/Gruntfile.coffee",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/desktop/temp/css/screen.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/desktop/css/screen/_firesale.sass",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blackbook/mobile/css/units/_advertising.scss",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blackbook/mobile/css/pages/_billing.scss",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blackbook/mobile/css/core/_base.scss",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blackbook/desktop/css/common/uploadify.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/desktop/temp/css/splash.css.map",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/desktop/css/screen/_ie7.sass",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/mobile/Gruntfile.coffee",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/desktop/temp/css/admin.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/mobile/package.json",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/mobile/temp/css/splash.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/mobile/temp/css/core.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sweetd/desktop/Gruntfile.coffee",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sweetd/desktop/package.json",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sweetd/mobile/Gruntfile.coffee",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sexplaycam/desktop/Gruntfile.coffee",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/gcruise/mobile/Gruntfile.coffee",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sexplaycam/mobile/Gruntfile.coffee",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/mobile/Gruntfile.coffee",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blackbook/mobile/Gruntfile.coffee",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sweetd/mobile/package.json",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sweetd/mobile/temp/css/core.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/gcruise/mobile/temp/css/exports/core.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sexplaycam/mobile/package.json",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sexplaycam/mobile/temp/css/exports/core.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blackbook/mobile/temp/css/exports/core.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blackbook/mobile/package.json",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blackbook/mobile/temp/css/exports/neutral.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/desktop/package.json",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/desktop/Gruntfile.coffee",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/mobile/temp/css/exports/core.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/Signup/templates/main_signup_form.blackbook.mobile.php",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/mobile/js/controllers/signup.coffee",
+		"/Users/dlunny/Desktop/installing-postcss.md",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/mobile/package.json",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/public/casualxbb/css/mobile/exports/core.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/mobile/css/exports/core.scss",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/mobile/temp/css/exports/neutral.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blacktryst/temp/css/beta/exports/core.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blacktryst/temp/css/beta/exports/header.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blacktryst/temp/css/admin.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blacktryst/temp/css/neutral.css",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/public/blacktryst/css/beta/exports/core.css",
+		"/Users/dlunny/fct/dating/src/Fct/Dating/SkinConfigurationBundle/Resources/config/blacktryst/activation.yml",
+		"/Users/dlunny/fct/dating/src/Fct/Dating/SkinConfigurationBundle/Resources/config/sexplaycam/sexplaycam.yml",
+		"/Users/dlunny/fct/dating/src/Fct/Dating/SkinConfigurationBundle/Resources/config/sexplaycam/main.yml",
+		"/Users/dlunny/fct/dating/src/Fct/Dating/SkinConfigurationBundle/Resources/config/sexplaycam/config_desktop.yml",
+		"/Users/dlunny/fct/dating/src/Fct/Dating/SkinConfigurationBundle/Resources/config/ihookup/activation.yml",
+		"/Users/dlunny/fct/dating/src/Fct/Dating/SkinConfigurationBundle/Resources/config/sweetd/activation.yml",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/default.casualxbb.tpl",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/default.sexplaycam.tpl",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/default.gcruise.tpl",
+		"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/Shared/templates/_soft_verify_nag.ihookup.mobile.php",
+		"/Users/dlunny/Desktop/work.sublime-workspace"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers",
+			"/Users/dlunny/fct/dating/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/",
+			"/Users/dlunny/fct/dating/",
+			"/Users/dlunny/fct/tour-email-pages/",
+			"/Users/dlunny/fct/tour/",
+			"/Users/dlunny/fct/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blackbook/mobile/css/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blackbook/css/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/mobile/js/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/*/*/css",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/**/css",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/**/**/css",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/, !*/**.{php}",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/, !.php",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/, !*.php",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/layout/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/mobile/css/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/css/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/Controllers/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sweetd/desktop/css/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sweetd/desktop",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blackbook/desktop/temp/css/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blackbook/dekstop/temp/css/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/mobile/css",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/desktop/js/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/desktop/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/public/ihookup/desktop/temp",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/desktop/temp",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/desktop/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/desktop/css/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/desktop/temp/css",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/desktop/temp/css/\n",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/desktop/temp\n",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/desktop/css",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sweetd/mobile/css",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/mobile/css",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/mobile/css/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sweetd/mobile/css/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sexplaycam/mobile/css/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/mobile/css/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blackbook/mobile/css/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/mobile/css/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/mobile/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/mobile/css/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blackbook/mobile/css/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blackbook/mobile/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/ihookup/desktop/js/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blacktryst/js",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blacktryst/js/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blacktryst",
+			"/Users/dlunny/fct/dating/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blacktryst/js/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/templates/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/desktop/js/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/js/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/mobile/js/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/assets",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/assets/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/assets/casualxbb/mobile/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/Profile/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/mobile/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/casualxbb/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blackbook/desktop/js/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/blackbook/desktop/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/layouts",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/, !*/node_modules/**",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/gcruise/desktop/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/gcruise/css/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/controllers/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/gcruise/desktop/",
+			"/Users/dlunny/fct/dating/src/apps/PublicDating/assets/sexplaycam/mobile/css"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"tmp",
+			"legend",
+			"autopre",
+			"postcss",
+			"auto",
+			"autoprefixer",
+			"autopre",
+			"uncss",
+			"uncss ",
+			"cssmin",
+			"settings.template.syntax",
+			"handlebars",
+			"'",
+			"handlebars",
+			"gruntfile",
+			"settings",
+			"copy",
+			"handlebars",
+			"copy",
+			"copy:dist",
+			"opy:dist",
+			"uncss",
+			"useminPrepare",
+			"build:development",
+			"watch",
+			"copy",
+			".directories.dist",
+			"copy",
+			"dist",
+			"cssmin",
+			"uncss",
+			"concat",
+			"uncss",
+			"You have successfully activated your account.",
+			"datacollect",
+			"We Want To Know More About You",
+			"step2",
+			"shared/activate",
+			"step2",
+			"shared/activate",
+			"activate",
+			"blackt",
+			"black",
+			"Welcome to",
+			"class=\"content-header",
+			"$email_verify_soft_nag",
+			"verify",
+			"'email_verified'",
+			"8778",
+			"\"grunt-sass\":",
+			"0px",
+			"alert",
+			"verify",
+			"alert",
+			"alert-t",
+			"verif",
+			"soft",
+			"soft_verify",
+			"verify",
+			"alert-t",
+			"soft_verify",
+			"alert-t",
+			"alert",
+			"notices",
+			"input",
+			"background",
+			"alert-bubble",
+			"box-shadow",
+			"autopre",
+			"pos",
+			"autoprefixer",
+			"linear-gradient(",
+			"autopre",
+			"require",
+			"autopref",
+			"auto",
+			"autopre",
+			"autoprefixer",
+			"auto",
+			"postcss",
+			"autoprefixer",
+			"postcss",
+			"autopre",
+			"billing-list-profile-image",
+			"billing-list-profile-image]",
+			"echo",
+			"data-echo",
+			"js-billing-profile-quote",
+			"class=\"billing-list-profile-image",
+			"notices",
+			"soft",
+			"shared/notices",
+			"soft_verify",
+			"content",
+			"email",
+			"verify",
+			"email_verify",
+			"soft_verify",
+			"padding: 0 0 2em 0",
+			"form-group-m-centered",
+			"you have sucessfully verified",
+			"you have successfully verified",
+			"verify",
+			"step2Action",
+			"step2",
+			"activation",
+			"activate",
+			"logged_in_header",
+			"beta_logged_in",
+			"class=\"header-l\"",
+			"step2",
+			"shared/activate",
+			"activate",
+			"Welcome to",
+			"welcome_",
+			"_welcome",
+			"Welcome to",
+			"Welcome to BlackTryst",
+			"$state-bubble-leader-size",
+			"$state-bubble-border-radius",
+			"$state-bubble-border-width",
+			"$state-bubble-leader-color",
+			"$state-bubble-background-color",
+			"$state-bubble-border-color",
+			"$state-bubble-font-color",
+			"/* Alert Nag Bubble styles */",
+			".alert",
+			"alert-header-t-bubble"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"\"",
+			"1.5rem",
+			"2rem",
+			"5px",
+			"$state-info-bubble-leader-color",
+			"$state-info-bubble-background-color",
+			"$state-info-bubble-border-color",
+			"$state-info-bubble-font-color",
+			"rgb( 219, 201, 166 )",
+			"rgb(249, 204, 111)",
+			"rgb( 246, 179, 48 )",
+			"1.85em",
+			"2em",
+			"5px",
+			"rgb( 193, 155, 82 )",
+			"rgb( 219, 201, 166 )",
+			"rgb( 242, 108, 79 )",
+			"rgb( 247, 181, 168 )",
+			"rgb( 242, 101, 34 )",
+			"rgb( 84, 171, 55 )",
+			"rgb( 170, 211, 156 )",
+			"rgb( 84, 171, 55 )",
+			"rgb( 170, 211, 156 )",
+			"background-image: url('data:image/svg",
+			"rgb( 255, 255, 255 )",
+			"transform:",
+			"rgb( 247, 247, 247 )",
+			"rgb( 255, 255, 255 )",
+			"@import \"../vendors/gridgraphy\";",
+			"@import \"../vendors/gridgraphy\"",
+			"@import \"../vendor/gridgraphy\"",
+			"rgba( 255, 255, 255, 1 )",
+			"$color-4",
+			"$color-5",
+			"rgba(0, 113, 148, 1)",
+			"rgba(94, 184, 222, 1)",
+			"rgba( 215, 0, 0, 1)",
+			"rgba( 2, 157, 202, 1)",
+			"rgba( 0, 113, 148, 1 )",
+			"rgba( 94, 184, 222, 1 )",
+			"rgba( 138, 18, 4, 1 )",
+			"rgba( 128, 14, 4, 1 )",
+			"rgba( 182, 24, 0, 1 )",
+			"rgba( 255, 255, 255, 1 )",
+			"rgba( 245, 245, 245, 1 )",
+			"el.data('trackAction')",
+			"el.data('trackCategory')",
+			"\"",
+			"icons/icon_check_green.gif",
+			"nag-section-cta-plan-info",
+			"nag-section-cta-plan-header",
+			"nag-section-cta-plan",
+			"icon-view-profile",
+			"icon-search-results",
+			"icon-photo",
+			"icon-chat",
+			"info",
+			"nag-plan-desc",
+			"nag-section-plan",
+			"nag-price-cta-price-desc-details",
+			"nag-plan-cta-price-desc",
+			"nag-section-cta-price",
+			"/images/desktop/icons/icon_",
+			"rgb( 51, 51, 51 )",
+			"/images/mobile/icons/icon_",
+			"nag-features-list",
+			"$color-12",
+			"span",
+			"",
+			"feature-list-icon",
+			"",
+			"rem",
+			"\"",
+			"<li class=\"list-item billing-features-list-item\">",
+			"$font-stack-6",
+			"$font-stack-2",
+			"<div class=\"billing-plan-info-heading\">\n                    <span class=\"billing-plan-info-heading-length\">",
+			"<div class=\"billing-plan\">",
+			"<button class=\"button billing-plan-arrow-button\" type=\"submit\">\n                  &#9667;\n                </button>",
+			"<button class=\"billing-plan-arrow-button\">\n                  &#9667;\n                </button>",
+			"billing-plan-arrow-button",
+			"$type_info[0]",
+			"$type_info[2]",
+			"$type_info[1]",
+			"$color-12",
+			"$color-10",
+			"$color-9",
+			"$color-8",
+			"list",
+			"header-sign-in-button",
+			"footer-l-3",
+			"footer-l-2",
+			"footer-l-1",
+			"<li class=\"list-item footer-list-item\">",
+			"<li class=\"list-item footer-social-link\">",
+			"<li class=\"list-item header-nav-list-item\">",
+			"<li class=\"list-item header-sub-nav-list-item\">",
+			"<li class=\"list-item header-nav-list-item\">",
+			"header-sign-in-button",
+			"header-l-2",
+			"header-l-1",
+			"header-l-3",
+			"header-l-2",
+			"header-l-1",
+			"header-subscribe-button",
+			"billing-plan-button",
+			"header-sub-nav-list-item",
+			"rgba( $color-5, 0.25 );",
+			"rgba( $color-5, 0.15 );",
+			"billing-plan-info-price-sub-text",
+			"header",
+			"front-nav-footer",
+			"min-width: 481px",
+			"\"modal-visible\"",
+			"",
+			"\"",
+			"form-group-t-rounded front-form-group",
+			"front-nav",
+			"$color-3",
+			"$color-4",
+			"$color-3",
+			"$color-1",
+			".form-t-modal",
+			"form-t-primary",
+			"primary",
+			"futura",
+			"lato-light",
+			"form-input-"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "/Users/dlunny/Desktop/github-himynameisdave/watchddit"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "gulpfile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2042,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								511,
+								511
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix (SL).tmTheme",
+							"syntax": "Packages/Seti_UI/Langs/Gulpfile JS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 114.0
+	},
+	"output.find_results":
+	{
+		"height": 114.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"untitled"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 231.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

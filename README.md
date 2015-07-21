@@ -1,5 +1,6 @@
 ##watchddit
 ---
+[![waffle.io](https://badge.waffle.io/himynameisdave/watchddit.png?label=ready&title=Ready)](http://waffle.io/himynameisdave/watchddit)
 
 Simplifies watching [r/videos](http://reddit.com/r/videos).
 

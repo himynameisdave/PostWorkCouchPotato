@@ -4,6 +4,7 @@
   "description": "Simplifies watching r/videos.",
   "main": "gulpfile.js",
   "private": "true",
+  "license": "WTFPL",
   "devDependencies": {
     "del": "^1.1.0",
     "glob": "^4.3.5",
