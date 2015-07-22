@@ -43,7 +43,7 @@ gulp.task( 'compile-css', function(){
 });
 
 //  BUILD SHIT
-gulp.task( 'build', [ 'require', 'build-css', 'html-me', 'move-shit' ] )
+gulp.task( 'build', [ 'require', 'build-css', 'html-me', 'move-shit', 'deploy' ] )
 
 gulp.task( 'require', function(){
 
@@ -55,7 +55,7 @@ gulp.task( 'require', function(){
     })
     .pipe(plug.uglify())
     .pipe(gulp.dest('./build/js/'));
-  */
+ */
 
   gulp.src( './app/js/**/*' )
     .pipe( gulp.dest( './build/js' ) );
@@ -96,7 +96,20 @@ gulp.task( 'move-shit', function(){
   gulp.src( './app/favicon.ico' )
     .pipe( gulp.dest( './build/' ) );
 
+  gulp.src( './README.md' )
+    .pipe( gulp.dest( './build/' ) );
+
 });
+
+
+/// deploy dat app
+gulp.task( 'deploy', [ 'require', 'build-css', 'html-me', 'move-shit' ], function(){
+
+  return gulp.src('./build/**/*')
+    .pipe(plug.ghPages());
+
+});
+
 
 
 
