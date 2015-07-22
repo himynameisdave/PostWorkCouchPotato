@@ -18,8 +18,10 @@ define(function () {
       el.innerHTML = '';
     },
     displayVideo: function( nextVid ){
-      //  This is ugly af
-      var sanitized = nextVid.data.media_embed.content.replace("&lt;", "<").replace("&lt;", "<").replace("&gt;", ">").replace("&gt;", ">");
+      //  sanitize the media embed content
+      var a = document.createElement('div');
+          a.innerHTML = nextVid.data.media_embed.content;
+      var sanitized = a.childNodes[0].nodeValue;
       //  clear the vid container
       this.els.vidBox.innerHTML = sanitized;
       //  resets the title
