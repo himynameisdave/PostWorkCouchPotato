@@ -36,6 +36,7 @@ define(function (require) {
       //  will go and add the Event listeners to the next and prev buttons
       setupButtonEvents = function(  ){
 
+        //  TODO: make these functions non-anon
         DOM.els.vidNextBtn.onclick = function(e){
 
           //  add the currentVideo to watchedVideos
@@ -54,11 +55,12 @@ define(function (require) {
           }
 
         };
-
+        //  TODO: make these functions non-anon
         DOM.els.vidPrevBtn.onclick = function(e){
           //  check if we even have any prev videos to go back and look at
           if( WatchedVideos.videos.length <= 0 )
-            return alert("No previous videos to check out!");
+            return DOM.alertUser();
+            // return alert("No previous videos to check out!");
 
           //  add the currentVideo to freshVideos
           FreshVideos.addNewFreshVideo(CurrentVideo.video);
