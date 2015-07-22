@@ -35,6 +35,59 @@ body {
     max-width: 767px;
   }
 }
+.alert {
+  background: rgba(0, 0, 0, 0.35);
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  width: 100%;
+  z-index: 9999;
+  -webkit-transition: opacity 0.395s ease-in-out;
+          transition: opacity 0.395s ease-in-out;
+}
+.alert.alert-s-visible {
+  opacity: 1;
+}
+.alert .alert-modal {
+  background: #f2f2f2;
+  padding: 4rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 90%;
+}
+@media screen and ( min-width: 480px ) {
+  .alert .alert-modal {
+    width: 70%;
+  }
+}
+@media screen and ( min-width: 620px ) {
+  .alert .alert-modal {
+    width: 50%;
+  }
+}
+@media screen and ( min-width: 767px ) {
+  .alert .alert-modal {
+    width: 380px;
+  }
+}
+.alert .alert-modal .alert-modal-header {
+  font-size: 3.25rem;
+  font-weight: 900;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  margin: 0 0 1rem;
+}
+.alert .alert-modal .alert-modal-msg {
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  margin: 0 0 1rem;
+  padding: 0;
+}
 .video-container {
   height: 0;
   position: relative;
@@ -102,7 +155,7 @@ body {
 .video-button:focus {
   outline: none;
 }
-@media screen and ( min-width: 375px ) {
+@media screen and ( min-width: 480px ) {
   .video-button {
     display: inline-block;
     font-size: 1.75rem;

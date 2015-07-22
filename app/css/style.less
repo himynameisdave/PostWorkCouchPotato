@@ -41,6 +41,52 @@ html, body {
 }
 
 
+.alert {
+  background: rgba( 0, 0, 0, 0.35 );
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  width: 100%;
+  z-index: 9999;
+
+  transition: opacity 0.395s ease-in-out;
+  &.alert-s-visible {
+    opacity: 1;
+  }
+
+  .alert-modal {
+    background: #f2f2f2;
+    padding: 4rem;
+    position: absolute;
+    left: 50%; top: 50%;
+    text-align: center;
+    transform: translate( -50%, -50% );
+    width: 90%;
+    @media @mq-small {
+      width: 70%;
+    }
+    @media @mq-med {
+      width: 50%;
+    }
+    @media @mq-large {
+      width: 380px;
+    }
+    .alert-modal-header {
+      font-size: 3.25rem;
+      font-weight: 900;
+      font-family: @rob;
+      margin: 0 0 1rem;
+    }
+    .alert-modal-msg {
+      font-size: 1.5rem;
+      font-weight: 300;
+      font-family: @rob;
+      margin: 0 0 1rem;
+      padding: 0;
+    }
+  }
+}
 
 .video-container {
   height: 0;
@@ -99,7 +145,7 @@ html, body {
   &:focus {
     outline: none;
   }
-  @media @mq-xsmall {
+  @media @mq-small {
     display: inline-block;
     font-size: 1.75rem;
     margin: 0;

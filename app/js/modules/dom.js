@@ -1,6 +1,7 @@
 define(function () {
   return {
     els: {
+      alert:       document.querySelector('.alert'),
       vidTitle:   document.querySelector('.video-title'),
       vidNextBtn: document.querySelector('.video-button.button-next'),
       vidPrevBtn: document.querySelector('.video-button.button-prev'),
@@ -26,7 +27,23 @@ define(function () {
       this.els.vidBox.innerHTML = sanitized;
       //  resets the title
       this.els.vidTitle.innerHTML = nextVid.data.title;
-    }
+    },
+    isAlertVisible: false,
 
+    alertUser: function( msg ){
+      //  do nothing if the alert is already visible
+      if( !this.isAlertVisible ){
+        //  store the context within this fn
+        var T = this;
+        T.isAlertVisible = true; // the alert is now visible
+        T.els.alert.classList.add('alert-s-visible'); // make the alert visible
+
+        //  wait now, for 2.6s
+        setTimeout(function(){
+          T.els.alert.classList.remove('alert-s-visible');//  make the alert hidden again
+          T.isAlertVisible = false; // aaand finally the alert is able to be shown again
+        }, 2600 );
+      }
+    }
   };
 });
