@@ -6,8 +6,8 @@
 requirejs.config({
     baseUrl: 'lib',
     paths: {
-        app: '../app',
-        js:  '../app/js'
+        app:   '../app',
+        build: '../build'
     }
 });
 
