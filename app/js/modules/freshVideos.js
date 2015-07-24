@@ -1,5 +1,5 @@
-define(function () {
-  return {
+
+module.exports = {
     //  the videos list that gets populated when we fetch
     videos: [],
     //  TODO: will store the lastFetched item
@@ -37,4 +37,3 @@ define(function () {
       //  TODO: maybe take the item out of the localStorage object as well?
     }
   };
-});

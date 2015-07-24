@@ -1,5 +1,7 @@
-define(function () {
-  return {
+
+
+
+module.exports = {
     //  this is the current video
     video: {},
     //  lil flag for seeing if a currentVid was found in localStorage
@@ -30,4 +32,3 @@ define(function () {
       return this.video.data.media_embed.content.replace("&lt;", "<").replace("&lt;", "<").replace("&gt;", ">").replace("&gt;", ">");
     }
   };
-});

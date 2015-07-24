@@ -1,13 +1,15 @@
-var gulp = require('gulp'),
-    plug    = require('gulp-load-plugins')({
-                scope: ['devDependencies'],
-                replaceString: 'gulp-',
-              });
+var gulp       = require('gulp'),
+    browserify = require('browserify'),
+    source     = require('vinyl-source-stream'),
+    plug       = require('gulp-load-plugins')({
+                  scope: ['devDependencies'],
+                  replaceString: 'gulp-',
+                 });
 
-
+//  default gives us a watch & livereload & starts server
 gulp.task( 'default', ['reload-me', 'serve-me'] )
 
-
+//  Reload/Watch task
 gulp.task( 'reload-me', function(){
 
   plug.livereload.listen();
@@ -16,11 +18,11 @@ gulp.task( 'reload-me', function(){
   })
   .on('change', plug.livereload.changed);
 
-  gulp.watch( ['app/css/*.less'], ['compile-css'] )
+  gulp.watch( ['app/css/*.less', 'app/js/**/*.js', '!app/js/bundle.js'], ['compile-css', 'js-bundle'] )
 
 });
 
-
+//  Server, using Connect
 gulp.task( 'serve-me', function(){
 
   plug.connect.server({
@@ -30,7 +32,7 @@ gulp.task( 'serve-me', function(){
 
 });
 
-
+//  CSS compile/Autoprefix
 gulp.task( 'compile-css', function(){
 
   return gulp.src('app/css/*.less')
@@ -43,26 +45,34 @@ gulp.task( 'compile-css', function(){
 });
 
 //  BUILD SHIT
-gulp.task( 'build', [ 'require', 'build-css', 'html-me', 'move-shit', 'deploy' ] )
+gulp.task( 'build', [ 'js-bundle', 'js-minify', 'build-css', 'html-me', 'move-shit' ] )
 
-gulp.task( 'require', function(){
 
- /* return plug.requirejs({
-      baseUrl: './app/js/',
-      name:    'main',
-      out:     'main.js'
 
-    })
-    .pipe(plug.uglify())
-    .pipe(gulp.dest('./build/js/'));
- */
+/// JS TASKS
+gulp.task( 'js-minify', [ 'js-bundle' ], function(){
 
-  gulp.src( './app/js/**/*' )
-    .pipe( gulp.dest( './build/js' ) );
-
+  return gulp.src( 'app/js/bundle.js' )
+          .pipe(plug.concat( 'app.js' ))
+          .pipe(plug.uglify())
+          .pipe(gulp.dest('./build/js/'));
 
 });
 
+
+/////// BROWSERIFY BUNDLE
+gulp.task( 'js-bundle', function(){
+
+  return browserify('./app/js/main.js')
+          .bundle()
+          .pipe(source('bundle.js'))
+          .pipe(gulp.dest('./app/js/'));
+
+});
+
+
+
+//  CSS TASKS
 gulp.task( 'build-css', [ 'compile-css' ], function(){
 
   return gulp.src( './app/css/style.css' )
@@ -72,6 +82,7 @@ gulp.task( 'build-css', [ 'compile-css' ], function(){
 });
 
 
+
 //HTMLMOVE/REPLACE
 gulp.task( 'html-me', function(){
 
@@ -79,6 +90,11 @@ gulp.task( 'html-me', function(){
               css: {
                 src: 'css/style.css',
                 tpl: '  <link rel="stylesheet" type="text/css" href="%s" />'
+              },
+              js: {
+                src: 'js/app.js',
+                tpl: '  <script type="text/javascript" src="%s"></script>'
+
               }
           }))
           .pipe(gulp.dest( 'build/' ));
@@ -87,26 +103,23 @@ gulp.task( 'html-me', function(){
 
 gulp.task( 'move-shit', function(){
 
-  gulp.src( './app/lib/**/*' )
-    .pipe( gulp.dest( './build/lib' ) );
-
-  gulp.src( './app/config.js' )
-    .pipe( gulp.dest( './build/' ) );
-
   gulp.src( './app/favicon.ico' )
     .pipe( gulp.dest( './build/' ) );
 
   gulp.src( './README.md' )
     .pipe( gulp.dest( './build/' ) );
 
+  gulp.src( './app/CNAME' )
+    .pipe( gulp.dest( './build/' ) );
+
 });
 
 
 /// deploy dat app
-gulp.task( 'deploy', [ 'require', 'build-css', 'html-me', 'move-shit' ], function(){
+gulp.task( 'deploy', [ 'build' ], function(){
 
   return gulp.src('./build/**/*')
-    .pipe(plug.ghPages());
+          .pipe(plug.ghPages());
 
 });
 

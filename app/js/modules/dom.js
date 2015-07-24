@@ -1,7 +1,7 @@
-define(function () {
-  return {
+
+module.exports =  {
     els: {
-      alert:       document.querySelector('.alert'),
+      alert:      document.querySelector('.alert'),
       vidTitle:   document.querySelector('.video-title'),
       vidNextBtn: document.querySelector('.video-button.button-next'),
       vidPrevBtn: document.querySelector('.video-button.button-prev'),
@@ -19,6 +19,7 @@ define(function () {
       el.innerHTML = '';
     },
     displayVideo: function( nextVid ){
+      console.log("displaying video using: ", nextVid)
       //  sanitize the media embed content
       var a = document.createElement('div');
           a.innerHTML = nextVid.data.media_embed.content;
@@ -46,4 +47,3 @@ define(function () {
       }
     }
   };
-});

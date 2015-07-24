@@ -1,21 +1,24 @@
-define(function (require) {
+module.exports = (function(){
+
+  // alert("eeeyyyy");
 
   //  Require in our modules
-  var WatchedVideos = require('../js/modules/watchedVideos.js'),
-      FreshVideos   = require('../js/modules/freshVideos.js'),
-      CurrentVideo  = require('../js/modules/currentVideo.js'),
-      DOM           = require('../js/modules/dom.js'),
+  var WatchedVideos = require('./modules/watchedVideos.js'),
+      FreshVideos   = require('./modules/freshVideos.js'),
+      CurrentVideo  = require('./modules/currentVideo.js'),
+      DOM           = require('./modules/dom.js'),
       //  can be used to go fetch new vids anytime...?
       //  accepts a callback for when things are done
       //  TODO: lastFetchOverride should be temporary
       getFreshVideos = function( cb ){
         //  fetches the FreshVideos, while also passing in the last fetched video
         FreshVideos.fetchVideos( function ( vids ){
+          console.log("JUST GRABBED VIDS!!", vids)
+
           //  get our list of vid.name data for comparisons
           var watched = WatchedVideos.returnSimpleWatchedList();
           //  returns a pruned array of unwatched, non mod posts
           var squeakyFreshVids = vids.filter(function(vid){
-            //  if not a mod/self post/has embed content
             if( vid.data.distinguished !== 'moderator' && vid.data.domain !== 'self.videos' && vid.data.media_embed.content ){
               //  if it's a watched vid, return false, otherwise its vaild
               if( watched.indexOf( vid.data.name ) > -1 )
@@ -80,6 +83,7 @@ define(function (require) {
       WatchedVideos.init();
       //  init CurrentVideo too
       CurrentVideo.init();
+
       //  if there is a currentVideo stored, we will go ahead and display it
       if( CurrentVideo.foundLocalCurrentVid ){
         console.log("found a CurrentVideo");
@@ -98,4 +102,7 @@ define(function (require) {
         setupButtonEvents();
       });
 
-});
+
+})();
+
+

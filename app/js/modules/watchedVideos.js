@@ -1,5 +1,4 @@
-define(function () {
-  return {
+module.exports = {
 
     //  Videos is our locally available list of watched videos
     videos: [],
@@ -52,4 +51,3 @@ define(function () {
       });
     }
   };
-});
