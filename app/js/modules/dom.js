@@ -2,11 +2,13 @@
 module.exports =  {
     els: {
       alert:      document.querySelector('.alert'),
+      resetBtn:   document.querySelector('.js-reset-button'),
       vidTitle:   document.querySelector('.video-title'),
       vidNextBtn: document.querySelector('.video-button.button-next'),
       vidPrevBtn: document.querySelector('.video-button.button-prev'),
       vidBox:     document.querySelector('.video-container')
     },
+    doneReset: false,
     unescapeHtml: function (html) {
       var temp = document.createElement("div");
       temp.innerHTML = html;

@@ -10,7 +10,6 @@ module.exports = (function(){
       DOM           = require('./modules/dom.js'),
       //  can be used to go fetch new vids anytime...?
       //  accepts a callback for when things are done
-      //  TODO: lastFetchOverride should be temporary
       getFreshVideos = function( cb ){
         //  fetches the FreshVideos, while also passing in the last fetched video
         FreshVideos.fetchVideos( function ( vids ){
@@ -77,6 +76,20 @@ module.exports = (function(){
           //  show the new currentVideo
           DOM.displayVideo(CurrentVideo.video);
         };
+
+        //  setup reset button
+        DOM.els.resetBtn.onclick = function(e){
+          if( !DOM.doneReset ){
+            DOM.doneReset = true;
+            //  reset stuff
+            localStorage.clear();
+            WatchedVideos.videos = [];
+            CurrentVideo.video = {};
+            FreshVideos.lastFetched = false;
+            //  call the inital getFreshVideos
+            getFreshVideos();
+          }
+        }
 
       };
 
@@ -148,11 +161,13 @@ module.exports = {
 module.exports =  {
     els: {
       alert:      document.querySelector('.alert'),
+      resetBtn:   document.querySelector('.js-reset-button'),
       vidTitle:   document.querySelector('.video-title'),
       vidNextBtn: document.querySelector('.video-button.button-next'),
       vidPrevBtn: document.querySelector('.video-button.button-prev'),
       vidBox:     document.querySelector('.video-container')
     },
+    doneReset: false,
     unescapeHtml: function (html) {
       var temp = document.createElement("div");
       temp.innerHTML = html;
@@ -278,6 +293,7 @@ module.exports = {
       //  returns undefined if array is empty
       //  juxed this one-liner from here:
       //  http://stackoverflow.com/a/12099341/4060044
+      console.log("returnLastFetched: "+this.videos.slice(-1)[0])
       return this.videos.slice(-1)[0];
     },
     //  returns a simplified list of video.name data for easier comparison later

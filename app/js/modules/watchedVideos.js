@@ -42,6 +42,7 @@ module.exports = {
       //  returns undefined if array is empty
       //  juxed this one-liner from here:
       //  http://stackoverflow.com/a/12099341/4060044
+      console.log("returnLastFetched: "+this.videos.slice(-1)[0])
       return this.videos.slice(-1)[0];
     },
     //  returns a simplified list of video.name data for easier comparison later

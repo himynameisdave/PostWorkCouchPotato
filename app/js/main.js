@@ -9,7 +9,6 @@ module.exports = (function(){
       DOM           = require('./modules/dom.js'),
       //  can be used to go fetch new vids anytime...?
       //  accepts a callback for when things are done
-      //  TODO: lastFetchOverride should be temporary
       getFreshVideos = function( cb ){
         //  fetches the FreshVideos, while also passing in the last fetched video
         FreshVideos.fetchVideos( function ( vids ){
@@ -76,6 +75,20 @@ module.exports = (function(){
           //  show the new currentVideo
           DOM.displayVideo(CurrentVideo.video);
         };
+
+        //  setup reset button
+        DOM.els.resetBtn.onclick = function(e){
+          if( !DOM.doneReset ){
+            DOM.doneReset = true;
+            //  reset stuff
+            localStorage.clear();
+            WatchedVideos.videos = [];
+            CurrentVideo.video = {};
+            FreshVideos.lastFetched = false;
+            //  call the inital getFreshVideos
+            getFreshVideos();
+          }
+        }
 
       };
 
