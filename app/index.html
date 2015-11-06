@@ -40,7 +40,7 @@
       </p>
       <p class="footy-text">
         <!-- TODO: use .js- prefix for class names that get javascripted -->
-        Version <span class="js-version-number">1.2.0</span>. Licenced under the <a class="footy-text-link" href="https://github.com/himynameisdave/watchddit/blob/master/LICENSE" class="_blank">WTFPL licence</a>.
+        Version <span class="js-version-number">1.3.0</span>. Licenced under the <a class="footy-text-link" href="https://github.com/himynameisdave/watchddit/blob/master/LICENSE" class="_blank">WTFPL licence</a>.
       </p>
       <p class="footy-subtext">
         Y'all want some source code? <a class="footy-text-link" href="https://github.com/himynameisdave/rtv" target="_blank">I got you</a>.
@@ -49,6 +49,21 @@
   </main>
 <!-- build:js -->
   <script type="text/javascript" src="js/bundle.js"></script>
-<!-- endbuild -->
+<!-- endbuild --><script type="text/javascript">
+    var doneReset = false;
+    document.addEventListener('DOMContentLoaded', function() {
+      var resetBtn = document.querySelector('.js-reset-button');
+      //  setup reset button
+      resetBtn.onclick = function(e){
+        if( !doneReset ){
+          doneReset = true;
+          //  reset stuff
+          localStorage.clear();
+          //  hard reload the page
+          location.reload();
+        }
+      }
+    });
+  </script>
 </body>
 </html>

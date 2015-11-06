@@ -77,20 +77,6 @@ module.exports = (function(){
           DOM.displayVideo(CurrentVideo.video);
         };
 
-        //  setup reset button
-        DOM.els.resetBtn.onclick = function(e){
-          if( !DOM.doneReset ){
-            DOM.doneReset = true;
-            //  reset stuff
-            localStorage.clear();
-            WatchedVideos.videos = [];
-            CurrentVideo.video = {};
-            FreshVideos.lastFetched = false;
-            //  call the inital getFreshVideos
-            getFreshVideos();
-          }
-        }
-
       };
 
       //  init should be sync/blocking with it's localStorage call, so it should have everything by the next step
@@ -118,8 +104,6 @@ module.exports = (function(){
 
 
 })();
-
-
 
 },{"./modules/currentVideo.js":2,"./modules/dom.js":3,"./modules/freshVideos.js":4,"./modules/watchedVideos.js":5}],2:[function(require,module,exports){
 
@@ -161,13 +145,11 @@ module.exports = {
 module.exports =  {
     els: {
       alert:      document.querySelector('.alert'),
-      resetBtn:   document.querySelector('.js-reset-button'),
       vidTitle:   document.querySelector('.video-title'),
       vidNextBtn: document.querySelector('.video-button.button-next'),
       vidPrevBtn: document.querySelector('.video-button.button-prev'),
       vidBox:     document.querySelector('.video-container')
     },
-    doneReset: false,
     unescapeHtml: function (html) {
       var temp = document.createElement("div");
       temp.innerHTML = html;
@@ -208,6 +190,7 @@ module.exports =  {
       }
     }
   };
+
 },{}],4:[function(require,module,exports){
 
 module.exports = {

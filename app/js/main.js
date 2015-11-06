@@ -76,20 +76,6 @@ module.exports = (function(){
           DOM.displayVideo(CurrentVideo.video);
         };
 
-        //  setup reset button
-        DOM.els.resetBtn.onclick = function(e){
-          if( !DOM.doneReset ){
-            DOM.doneReset = true;
-            //  reset stuff
-            localStorage.clear();
-            WatchedVideos.videos = [];
-            CurrentVideo.video = {};
-            FreshVideos.lastFetched = false;
-            //  call the inital getFreshVideos
-            getFreshVideos();
-          }
-        }
-
       };
 
       //  init should be sync/blocking with it's localStorage call, so it should have everything by the next step
@@ -117,5 +103,3 @@ module.exports = (function(){
 
 
 })();
-
-
