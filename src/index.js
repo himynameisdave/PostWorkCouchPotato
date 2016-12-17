@@ -1,9 +1,12 @@
-// import React from 'react';
-//
-//
-// const App = () => (<main className="app">
-//
-// </main>);
-//
+import React from 'react';
+import { render } from 'react-dom';
 
-console.log('working')
+
+const App = () => (<div><h1 className="app-l">Hello world</h1></div>);
+
+console.log("CHINA@@@!!!");
+
+render(
+  <App />,
+  document.querySelector('#app')
+);

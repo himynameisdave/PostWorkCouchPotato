@@ -3,14 +3,20 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
 
 
 module.exports = {
-  entry: [
-    'webpack-dev-server/client?http://localhost:5000',
-    'webpack/hot/dev-server',
-    './src/index.js'
-  ],
   devtool: 'eval-source-map',
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new DashboardPlugin()
-  ]
+  devServer: {
+    // historyApiFallback: true, // used for things like react-router
+    // hot: true,  //  dem hot modules
+    inline: true, // inline vs iframe, see: https://webpack.github.io/docs/webpack-dev-server.html#inline-mode
+    progress: true, // show a progress bar when building
+    stats: 'errors-only', // only log errors
+    // Parse host and port from env to allow customization.
+    // host: process.env.HOST,
+    port: process.env.PORT || 6969
+  }
+  // ,
+  // plugins: [
+  //   new webpack.HotModuleReplacementPlugin(),
+  //   // new DashboardPlugin()
+  // ]
 };
