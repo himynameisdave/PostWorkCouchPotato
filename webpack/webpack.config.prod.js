@@ -1,4 +1,6 @@
 const webpack = require('webpack');
+// const vendorDependencies = 
+
 
 module.exports = {
   devtool: 'source-map',

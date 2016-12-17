@@ -1,7 +1,8 @@
+const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
-const path = require('path');
+const autoprefixer = require('autoprefixer');
 const webpack_dev_config = require('./webpack/webpack.config.dev.js');
 const webpack_prod_config = require('./webpack/webpack.config.prod.js');
 
@@ -29,9 +30,14 @@ const webpack_config_common = {
         exclude: /\\node_modules/,
         loaders: ['babel'],
         include: path.join(__dirname, 'src')
+      }, {
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'postcss', 'sass'],
+        include: path.join(__dirname, 'src/sass')
       }
     ]
   },
+  postcss: () => [autoprefixer({ browsers: ['ios 5', 'android 2.1', '> 2%'] })],
   plugins: [
     new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
