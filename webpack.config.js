@@ -41,7 +41,7 @@ const webpack_config_common = {
   plugins: [
     new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
-      title: 'watchddit ~ watch the internet',
+      title: '📺 watchddit ~ watch the internet 📺',
       filename: 'index.html',
       template: './webpack/webpack.index-template.ejs',
       inject: 'body',
@@ -53,7 +53,7 @@ const webpack_config_common = {
   },
 };
 
-if (TARGET === 'start' || !TARGET) {
+if (TARGET === 'start' || TARGET === 'dev' || !TARGET) {
   module.exports = merge(webpack_config_common, webpack_dev_config);
 }
 
