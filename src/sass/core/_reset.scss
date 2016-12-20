@@ -14,11 +14,6 @@ Be aware that some of these resets have a negative impact on the default usabili
 
 */
 
-/*Hat tip to @thierrykoblentz for this approach: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-html {
-    box-sizing: border-box;
-}
-
 /*Yes, the universal selector. No, it isn't slow: https://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/*/
 * {
     /*This prevents users being able to select text. Stops long presses in iOS bringing up copy/paste UI for example. Note below we specifically switch user-select on for inputs for the sake of Safari. Bug here: https://bugs.webkit.org/show_bug.cgi?id=82692*/
@@ -28,7 +23,7 @@ html {
     /*Older Androids need this instead*/
     -webkit-tap-highlight-color: transparent;
     /* Most devs find border-box easier to reason about. However by inheriting we can mix box-sizing approaches.*/
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 
 *:before,
@@ -42,6 +37,7 @@ input[type],
 	user-select: text;
 }
 
+html,
 body,
 h1,
 h2,
@@ -52,15 +48,12 @@ h6,
 p {
     /*We will be adding our own margin to these elements as needed.*/
     margin: 0;
+    padding: 0;
     /*You'll want to set font-size as needed.*/
-    font-size: 1rem;
+    font-size: 16px;
+    font-size: 5vw;
     /*No bold for h tags unless you want it*/
     font-weight: 400;
-}
-
-/* Later browsers can be more easily reset with `all: unset`. However, further declarations on these elements follow for older browsers. REMEMBER accessibility for outlines etc. This undoes a LOT of default UA styling, use with EXTREME caution!! */
-* {
-    all: unset;
 }
 
 /*
@@ -74,17 +67,6 @@ noembed, param, template {
 a {
     text-decoration: none;
     color: inherit;
-}
-
-/*No bold for b tags by default*/
-b {
-    font-weight: 400;
-}
-
-/*Prevent these elements having italics by default*/
-em,
-i {
-    font-style: normal;
 }
 
 /*IMPORTANT: This removes the focus outline for most browsers. Be aware this is a backwards accessibilty step! Mozilla (i.e. Firefox) also adds a dotted outline around a tags and buttons when they receive tab focus which I haven't found an unhacky way of removing.*/
@@ -151,4 +133,10 @@ Ensure you set `#000` to the colour you want your text to appear */
 select:-moz-focusring {
     color: transparent;
     text-shadow: 0 0 0 #000;
+}
+
+ol, ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }

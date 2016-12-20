@@ -1,0 +1,58 @@
+// player
+//
+// classes for the player unit.
+//
+// Markup: tests/fixtures/player.hbs
+//
+// Styleguide units.player
+
+.player {
+  height: auto;
+  width: 100%;
+  @media #{$media-medium} {
+    max-width: 767px;
+    width: 90%;
+  }
+  @media #{$media-large} {
+    width: 85%;
+  }
+  @media #{$media-xlarge} {
+    max-width: 1024px;
+  }
+}
+
+.player-l {
+  height: auto;
+  width: 100%;
+}
+
+.player--display {
+  background-color: $light-black;
+  border-bottom: 1px solid #fefefe;
+  width: 100%;
+  height: 15rem;
+  @media #{$media-xxsmall} {
+    height: 17rem;
+  }
+  @media #{$media-small} {
+    height: 15rem;
+  }
+  @media #{$media-medium} {
+    height: 13.5rem;
+  }
+  @media #{$media-large} {
+    height: 10rem;
+  }
+}
+
+.player--controls {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  > * {
+    height: 3rem;
+    background: lime;
+    width: 33%;
+  }
+}

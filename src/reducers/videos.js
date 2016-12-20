@@ -15,7 +15,7 @@ const videos = (state = defaultVideosState, action) => {
         ...state,
         isFetching: false,
         after: action.payload.after,
-        videos: state.data.concat(action.payload.videos)
+        videos: state.videos.concat(action.payload.videos)
       };
     case 'FETCH_VIDEOS_FAILED':
       return { ...state, isFetching: false, error: action.error };

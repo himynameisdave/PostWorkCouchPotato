@@ -1,0 +1,22 @@
+// header
+//
+// classes for the header unit.
+//
+// Markup: tests/fixtures/header.hbs
+//
+// Styleguide units.header
+
+.header {
+  align-items: center;
+  // background: #333;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  // position: fixed;
+  // top: 0;
+}
+
+.header--heading {
+  padding-bottom: 0.25rem;
+}
