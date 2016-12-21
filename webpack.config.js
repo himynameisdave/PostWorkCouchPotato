@@ -26,6 +26,9 @@ const webpack_config_common = {
         loaders: ['babel'],
         include: path.join(__dirname, 'src')
       }, {
+        test: /\.json$/,
+        loader: 'json'
+      }, {
         test: /\.jsx?$/,
         exclude: /\\node_modules/,
         loaders: ['babel'],

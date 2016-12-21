@@ -1,15 +1,14 @@
 
 
 const defaultPlayerState = {
-  activeVideo: false,
-  nextVideo: false,
-  prevVideo: false
+  activeVideo: {},
+  nextVideo: {},
+  prevVideo: {}
 };
 
 const player = (state = defaultPlayerState, action) => {
   switch (action.type) {
     case 'GO_TO_NEXT_VIDEO':
-      if (!state.nextVideo) return { ...state };
       return {
         ...state,
         nextVideo: state.activeVideo,
@@ -17,7 +16,6 @@ const player = (state = defaultPlayerState, action) => {
         prevVideo: action.payload
       };
     case 'GO_TO_PREV_VIDEO':
-      if (!state.prevVideo) return { ...state };
       return {
         ...state,
         nextVideo: state.activeVideo,

@@ -24,22 +24,23 @@ router.use('/videos', (req, res) => {
       const responseObject = {
         after: redditData.data.after,
         before: redditData.data.before,
-        videos: redditData.data.children.map(({ data }) => ({
-          id: data.id, // confusing, may not need...
-          name: data.name, // similar to .id but like `t3_ai29akd`
-          author: data.author,
-          created: data.created_utc,
-          domain: data.domain,
-          embed: {
-            html: data.media.oembed.html,
-            thumbnail: data.media.oembed.thumbnail_url
-          },
-          reddit_link: data.permalink,
-          score: data.score,
-          title: data.title
-        }))
+        videos: redditData.data.children
+          .filter(({ data }) => data.media && data.media.oembed && data.media.oembed.html)
+          .map(({ data }) => ({
+            id: data.id, // confusing, may not need...
+            name: data.name, // similar to .id but like `t3_ai29akd`
+            author: data.author,
+            created: data.created_utc,
+            domain: data.domain,
+            embed: {
+              html: data.media.oembed.html,
+              thumbnail: data.media.oembed.thumbnail_url
+            },
+            reddit_link: data.permalink,
+            score: data.score,
+            title: data.title
+          }))
       };
-
       res.send(responseObject);
     })
     .catch(e => res.json({

@@ -3,17 +3,27 @@ import { render } from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import persistState from 'redux-localstorage'
+import persistState from 'redux-localstorage';
 import rootReducer from './reducers/index.js';
-
 import App from './components/App.js';
 import './sass/exports/default.scss';
 
 require('isomorphic-fetch');
 
+const beenHalfHourOrLonger = (lastFetched) => {
+  const halfHour = 1800000;
+  return Date.now() - lastFetched >= halfHour;
+};
+
 const getPreviousState = () => {
-  const appState = localStorage.getItem('redux');
-  if (appState) return JSON.parse(appState);
+  let appState = localStorage.getItem('redux');
+  if (appState) {
+    appState = JSON.parse(appState);
+    if (beenHalfHourOrLonger(appState.videos.lastFetched)) {
+      return {};
+    }
+    return appState;
+  }
   return {};
 };
 

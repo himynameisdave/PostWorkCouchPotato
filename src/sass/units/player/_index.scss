@@ -27,8 +27,11 @@
 }
 
 .player--display {
+  align-items: center;
   background-color: $light-black;
   border-bottom: 1px solid #fefefe;
+  display: flex;
+  justify-content: center;
   width: 100%;
   height: 15rem;
   @media #{$media-xxsmall} {

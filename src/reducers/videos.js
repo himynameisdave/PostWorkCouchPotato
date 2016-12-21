@@ -1,9 +1,22 @@
 
 const defaultVideosState = {
   isFetching: false,
+  lastFetched: 0,
   error: false,
-  after: null,
+  after: '',
   videos: []
+};
+
+//  No dupes
+const addVideos = (oldVideos, newVideos) => {
+  let unique = [];
+  return oldVideos.concat(newVideos).filter(({ id }) => {
+    if (!unique.includes(id)) {
+      unique = unique.concat([id]);
+      return true;
+    }
+    return false;
+  });
 };
 
 const videos = (state = defaultVideosState, action) => {
@@ -14,11 +27,17 @@ const videos = (state = defaultVideosState, action) => {
       return {
         ...state,
         isFetching: false,
+        lastFetched: Date.now(),
         after: action.payload.after,
-        videos: state.videos.concat(action.payload.videos)
+        videos: addVideos(state.videos, action.payload.videos)
       };
     case 'FETCH_VIDEOS_FAILED':
-      return { ...state, isFetching: false, error: action.error };
+      return {
+        ...state,
+        isFetching: false,
+        lastFetched: Date.now(),
+        error: action.error
+      };
     default:
       return state;
   }

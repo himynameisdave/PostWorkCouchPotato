@@ -1,0 +1,48 @@
+@keyframes spin-cw {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes spin-ccw {
+  0% {
+    transform: rotate(-360deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+
+.loady {
+  height: 5rem;
+  width: 5rem;
+}
+
+.loady-svg {
+  height: 100%;
+  width: 100%;
+}
+
+@mixin loady-anim($name) {
+  animation-name: $name;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+}
+.loady--inner {
+  @include loady-anim(spin-cw);
+}
+
+.loady--outer {
+  @include loady-anim(spin-ccw);
+}
