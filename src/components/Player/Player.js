@@ -36,6 +36,8 @@ class Player extends Component {
     //  mapDispatchToProps.fetchVideos
     fetchVideos: PropTypes.func.isRequired,
     loadVideos: PropTypes.func.isRequired,
+    goToNextVideo: PropTypes.func.isRequired,
+    goToPrevVideo: PropTypes.func.isRequired
   };
 
   static defaultState = {
@@ -73,8 +75,11 @@ class Player extends Component {
         </div>
         <div className="player-l">
           <PlayerControls
-            handlePrevClick={() => console.log('prev')}
-            handleNextClick={() => console.log('next')}
+            handlePrevClick={this.props.prevVideo.id ? this.props.goToPrevVideo : () => null}
+            handleNextClick={this.props.nextVideo.id ? this.props.goToNextVideo : () => null}
+            prevVideoTitle={this.props.prevVideo.title || ''}
+            nextVideoTitle={this.props.nextVideo.title || ''}
+            goToPrevVideo={this.props.goToPrevVideo}
           />
         </div>
       </section>

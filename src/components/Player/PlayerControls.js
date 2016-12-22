@@ -5,7 +5,12 @@ import PlayerInfobox from './PlayerInfobox.js';
 
 const handleClick = dir => () => console.log(`clicked on ${dir}`);
 
-const PlayerControls = ({ handlePrevClick, handleNextClick }) => {
+const PlayerControls = ({
+  handlePrevClick,
+  handleNextClick,
+  nextVideoTitle,
+  prevVideoTitle,
+}) => {
   return (
     <ul className="player--controls">
       <li
@@ -14,6 +19,7 @@ const PlayerControls = ({ handlePrevClick, handleNextClick }) => {
         <PlayerControlsBtn
           direction="prev"
           onClick={handlePrevClick}
+          title={prevVideoTitle}
         />
       </li>
       <li
@@ -27,10 +33,19 @@ const PlayerControls = ({ handlePrevClick, handleNextClick }) => {
         <PlayerControlsBtn
           direction="next"
           onClick={handleNextClick}
+          title={nextVideoTitle}
         />
       </li>
     </ul>
   );
+};
+
+
+PlayerControls.propTypes = {
+  handlePrevClick: PropTypes.func.isRequired,
+  handleNextClick: PropTypes.func.isRequired,
+  nextVideoTitle: PropTypes.string.isRequired,
+  prevVideoTitle: PropTypes.string.isRequired
 };
 
 export default PlayerControls;

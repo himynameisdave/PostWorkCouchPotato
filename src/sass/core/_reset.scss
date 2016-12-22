@@ -50,8 +50,13 @@ p {
     margin: 0;
     padding: 0;
     /*You'll want to set font-size as needed.*/
-    font-size: 16px;
-    font-size: 5vw;
+    font-size: 18px;
+    @media #{$media-medium} {
+      font-size: 16px;
+    }
+    @media #{$media-xxlarge} {
+      font-size: 18px;
+    }
     /*No bold for h tags unless you want it*/
     font-weight: 400;
 }

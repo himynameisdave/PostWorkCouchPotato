@@ -10,16 +10,19 @@ import './sass/exports/default.scss';
 
 require('isomorphic-fetch');
 
-const beenHalfHourOrLonger = (lastFetched) => {
-  const halfHour = 1800000;
-  return Date.now() - lastFetched >= halfHour;
+
+//  break off into own module
+//  returns true if given lastFetched has been in the last given # of mins
+const minutesSince = (lastFetched, mins) => {
+  const minsInMilliseconds = mins * 60 * 1000;
+  return Date.now() - lastFetched >= minsInMilliseconds;
 };
 
 const getPreviousState = () => {
   let appState = localStorage.getItem('redux');
   if (appState) {
     appState = JSON.parse(appState);
-    if (beenHalfHourOrLonger(appState.videos.lastFetched)) {
+    if (minutesSince(appState.videos.lastFetched, 1)) {
       return {};
     }
     return appState;
