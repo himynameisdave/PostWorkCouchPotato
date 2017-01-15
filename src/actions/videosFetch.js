@@ -21,8 +21,9 @@ export const fetchVideos = (after) => (dispatch) => {
   fetch('http://localhost:6868/api/videos')
     .then(d => d.json())
     .then(videos => dispatch(fetchVideos_success(videos)))
+    //  TODO: dispatch loadVideos
     .catch(e => {
-      console.info("whoops shitty", e);
+      console.warn("whoops shitty", e);
       return dispatch(fetchVideos_failed(e));
     });
 };

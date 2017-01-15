@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const merge = require('webpack-merge');
 const autoprefixer = require('autoprefixer');
 const webpack_dev_config = require('./webpack/webpack.config.dev.js');
@@ -49,7 +50,18 @@ const webpack_config_common = {
       template: './webpack/webpack.index-template.ejs',
       inject: 'body',
       appMountId: 'app'
-    })
+    }),
+    // new SWPrecacheWebpackPlugin(
+    //   {
+    //     cacheId: 'watchddit',
+    //     filename: 'watchddit-sw.js',
+    //     maximumFileSizeToCacheInBytes: 4194304,
+    //     runtimeCaching: [{
+    //       handler: 'cacheFirst',
+    //       urlPattern: /[.]js|[.]css$/,
+    //     }],
+    //   }
+    // ),
   ],
   resolve: {
     extensions: ['', '.js', '.jsx'],

@@ -10,6 +10,11 @@ export const goToPrevVideo = nextVideo => ({
   payload: nextVideo
 });
 
+export const setActiveVideo = videoId => ({
+  type: 'SET_ACTIVE_VIDEO',
+  payload: videoId
+});
+
 export const loadVideos = (activeVideo, nextVideo) => ({
   type: 'LOAD_VIDEOS',
   payload: { activeVideo, nextVideo }

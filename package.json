@@ -17,7 +17,7 @@
     "truncate": "^2.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^6.5.4",
+    "autoprefixer": "^6.6.0",
     "babel": "^6.5.2",
     "babel-core": "^6.21.0",
     "babel-eslint": "^7.1.1",
@@ -37,14 +37,15 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.24.1",
-    "node-sass": "^4.0.0",
+    "node-sass": "^4.1.1",
     "postcss-loader": "^1.2.1",
-    "sass-loader": "^4.1.0",
+    "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
+    "sw-precache-webpack-plugin": "^0.7.0",
     "webpack": "^1.14.0",
     "webpack-dashboard": "^0.2.0",
     "webpack-dev-server": "^1.16.2",
-    "webpack-merge": "^1.1.1"
+    "webpack-merge": "^1.1.2"
   },
   "scripts": {
     "dev": "webpack-dashboard webpack-dev-server",

@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import persistState from 'redux-localstorage';
+// import persistState from 'redux-localstorage';
 import rootReducer from './reducers/index.js';
 import App from './components/App.js';
 import './sass/exports/default.scss';
@@ -37,10 +37,13 @@ const store = createStore(
     applyMiddleware(
       thunk
     ),
-    persistState(),
+    // persistState(),
     window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 );
+
+//  if !process.env.PRODUCTION
+window.state = store.getState();
 
 render(
   <Provider store={store}>

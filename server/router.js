@@ -38,7 +38,11 @@ router.use('/videos', (req, res) => {
             },
             reddit_link: data.permalink,
             score: data.score,
-            title: data.title
+            title: data.title,
+            watchddit: {
+              watchedVideo: false,
+              isActiveVideo: false
+            }
           }))
       };
       res.send(responseObject);

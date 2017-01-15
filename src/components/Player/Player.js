@@ -4,20 +4,20 @@ import PlayerDisplay from './PlayerDisplay.js';
 import PlayerControls from './PlayerControls.js'
 import {
   fetchVideos,
-  loadVideos,
-  goToNextVideo,
-  goToPrevVideo
+  playerLoadVideos,
+  playerNextVideo,
+  playerPrevVideo,
 } from '../../actions/';
 
 const mapStateToProps = (state) => ({
-  ...state.videos,
-  ...state.player
+  ...state.videos
 });
 const mapDispatchToProps = (dispatch) => ({
   fetchVideos: () => dispatch(fetchVideos()),
-  loadVideos: (activeVideo, nextVideo) => dispatch(loadVideos(activeVideo, nextVideo)),
-  goToNextVideo: () => dispatch(goToNextVideo()),
-  goToPrevVideo: () => dispatch(goToPrevVideo())
+  loadVideos: () => dispatch(playerLoadVideos()),
+  // loadVideos: (activeVideo, nextVideo) => dispatch(loadVideos(activeVideo, nextVideo)),
+  goToNextVideo: () => dispatch(playerNextVideo()),
+  goToPrevVideo: () => dispatch(playerPrevVideo())
 });
 
 
@@ -25,47 +25,73 @@ class Player extends Component {
 
   static propTypes = {
     //  state.videos
-    isFetching: PropTypes.bool.isRequired,
-    error: PropTypes.any.isRequired,
-    after: PropTypes.string.isRequired,
+    // isFetching: PropTypes.bool.isRequired,
+    // error: PropTypes.any.isRequired,
+    // after: PropTypes.string.isRequired,
     videos: PropTypes.array.isRequired,
-    //  state.player
-    activeVideo: PropTypes.object.isRequired,
-    nextVideo: PropTypes.object.isRequired,
-    prevVideo: PropTypes.object.isRequired,
-    //  mapDispatchToProps.fetchVideos
+    player: PropTypes.shape({
+      activeVideo: PropTypes.object,
+      nextVideo: PropTypes.object,
+      prevVideo: PropTypes.object,
+    }).isRequired,
+    // //  state.player
+    // activeVideo: PropTypes.object.isRequired,
+    // nextVideo: PropTypes.object.isRequired,
+    // prevVideo: PropTypes.object.isRequired,
+    // //  mapDispatchToProps.fetchVideos
     fetchVideos: PropTypes.func.isRequired,
     loadVideos: PropTypes.func.isRequired,
     goToNextVideo: PropTypes.func.isRequired,
-    goToPrevVideo: PropTypes.func.isRequired
+    goToPrevVideo: PropTypes.func.isRequired,
   };
 
   static defaultState = {
-    activeVideo: {},
-    nextVideo: {},
-    prevVideo: {}
+    // activeVideo: {},
+    // nextVideo: {},
+    // prevVideo: {}
   };
 
   componentWillMount() {
     //  TODO:  do a "lastFetched" check
-    if (!this.props.activeVideo.id) {
+    // if (!this.props.activeVideo.id) {
       this.props.fetchVideos();
+    // }
+  }
+
+  componentDidUpdate() {
+    if (this.props.videos.length && !this.props.player.activeVideo) {
+      this.props.loadVideos();
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    //  TODO:  this seems kinds ugly...
-    if (!this.props.activeVideo.id && nextProps.videos.length > 0) {
-      // if (!this.props.activeVideo || !this.props.activeVideo.id) {
-        this.props.loadVideos(nextProps.videos[0], nextProps.videos[1]);
-        // if (this.props.after) {
-          // this.props.fetchVideos(after);
-        // }
-      // }
-    }
+  handlePrevClick = () => {
+    return !this.props.player.prevVideo ? () => {
+      console.log('no prev video!');
+    } : this.props.goToPrevVideo;
   }
 
   render() {
+    const { activeVideo } = this.props.player;
+    const title = this.props.player && this.props.player.activeVideo && this.props.player.activeVideo.title ? this.props.player.activeVideo.title : '';
+    return (
+      <section className="player">
+        <div className="player-l">
+          {activeVideo ? (<PlayerDisplay
+            activeVideo={activeVideo}
+          />) : null}
+        </div>
+        <div className="player-l">
+          <button onClick={this.handlePrevClick()}>
+            Prev
+          </button>
+          <h1>{title}</h1>
+          <button onClick={this.props.goToNextVideo}>
+            Next
+          </button>
+        </div>
+      </section>
+    );
+    /*
     return (
       <section className="player">
         <div className="player-l">
@@ -84,6 +110,7 @@ class Player extends Component {
         </div>
       </section>
     );
+    */
   }
 }
 
