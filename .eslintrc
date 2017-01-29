@@ -4,6 +4,11 @@
     "browser": true,
     "node": true
   },
+  "globals": {
+    "describe": true,
+    "expect": true,
+    "test": true
+  },
   "rules": {
     "comma-dangle": 0,
     "import/no-extraneous-dependencies": ["error", {

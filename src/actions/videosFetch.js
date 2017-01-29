@@ -1,15 +1,15 @@
 require('isomorphic-fetch');
 
-const fetchVideos_pending = () => ({
+export const fetchVideos_pending = () => ({
   type: 'FETCH_VIDEOS_PENDING'
 });
 
-const fetchVideos_success = payload => ({
+export const fetchVideos_success = payload => ({
   type: 'FETCH_VIDEOS_SUCCESS',
   payload
 });
 
-const fetchVideos_failed = error => ({
+export const fetchVideos_failed = error => ({
   type: 'FETCH_VIDEOS_FAILED',
   error
 });

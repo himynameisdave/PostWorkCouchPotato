@@ -37,6 +37,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.24.1",
+    "jest": "^18.1.0",
     "node-sass": "^4.1.1",
     "postcss-loader": "^1.2.1",
     "sass-loader": "^4.1.1",
@@ -48,6 +49,7 @@
     "webpack-merge": "^1.1.2"
   },
   "scripts": {
+    "test": "jest",
     "dev": "webpack-dashboard webpack-dev-server",
     "start": "nodemon ./server/server.js",
     "build": "webpack"
