@@ -1,9 +1,4 @@
-
-const defaultSettingsState = {
-  isSettingsOpen: false,
-  theme: 'light'
-};
-
+import { defaultSettingsState } from './defaults.js';
 
 const settings = (state = defaultSettingsState, action) => {
   switch (action.type) {

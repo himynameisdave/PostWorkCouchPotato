@@ -49,7 +49,7 @@
     "webpack-merge": "^1.1.2"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "dev": "webpack-dashboard webpack-dev-server",
     "start": "nodemon ./server/server.js",
     "build": "webpack"
