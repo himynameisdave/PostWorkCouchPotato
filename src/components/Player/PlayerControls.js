@@ -1,51 +1,32 @@
 import React, { PropTypes } from 'react';
-import PlayerControlsBtn from './PlayerControlBtn.js';
-import PlayerInfobox from './PlayerInfobox.js';
+import PlayerControlBtn from './PlayerControlBtn';
 
-
-const handleClick = dir => () => console.log(`clicked on ${dir}`);
-
-const PlayerControls = ({
-  handlePrevClick,
-  handleNextClick,
-  nextVideoTitle,
-  prevVideoTitle,
-}) => {
-  return (
-    <ul className="player--controls">
-      <li
-        className="player--controls--control"
-      >
-        <PlayerControlsBtn
-          direction="prev"
-          onClick={handlePrevClick}
-          title={prevVideoTitle}
-        />
-      </li>
-      <li
-        className="player--controls--control"
-      >
-        <PlayerInfobox />
-      </li>
-      <li
-        className="player--controls--control"
-      >
-        <PlayerControlsBtn
-          direction="next"
-          onClick={handleNextClick}
-          title={nextVideoTitle}
-        />
-      </li>
-    </ul>
-  );
-};
-
+const PlayerControls = ({ nextVideoTitle, handleNextClick, prevVideoTitle, handlePrevClick, }) => (
+    <div className="player__controls">
+        <div className="player__controls__control">
+            <PlayerControlBtn
+              direction="prev"
+              title={prevVideoTitle}
+              handleClick={handlePrevClick}
+              isDisabled={!prevVideoTitle}
+            />
+        </div>
+        <div className="player__controls__control">
+            <PlayerControlBtn
+              direction="next"
+              title={nextVideoTitle}
+              handleClick={handleNextClick}
+              isDisabled={!nextVideoTitle}
+            />
+        </div>
+    </div>
+);
 
 PlayerControls.propTypes = {
-  handlePrevClick: PropTypes.func.isRequired,
-  handleNextClick: PropTypes.func.isRequired,
   nextVideoTitle: PropTypes.string.isRequired,
-  prevVideoTitle: PropTypes.string.isRequired
+  handleNextClick: PropTypes.func.isRequired,
+  prevVideoTitle: PropTypes.string,
+  handlePrevClick: PropTypes.func.isRequired,
 };
 
 export default PlayerControls;

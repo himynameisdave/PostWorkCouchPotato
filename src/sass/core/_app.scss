@@ -1,5 +1,5 @@
 html, body {
-  font-family: 'Roboto', 'Roboto Slab', 'Hevetica Neue', Helvetica, Arial, sans-serif;
+  font-family: $font-stack-1;
   height: 100%;
   width: 100%;
 }
@@ -17,6 +17,7 @@ html, body {
   flex-direction: column;
   justify-content: flex-start;
   margin: 0 auto;
+  padding: 5% 0;
   position: relative;
   width: 100%;
   height: 100%;
