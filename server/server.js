@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 
 //  Serve the /public/ dir
-app.use('/', express.static(`${__dirname}../public`));
+app.use('/', express.static('public'));
 //  Also serve the /api/
 app.use('/api', router);
 
