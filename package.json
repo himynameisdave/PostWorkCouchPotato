@@ -50,12 +50,12 @@
     "webpack-dev-server": "^1.16.2",
     "webpack-merge": "^1.1.2"
   },
-  "postinstall": "npm run build",
   "scripts": {
     "test": "jest --coverage",
     "dev": "webpack-dashboard webpack-dev-server",
     "dev-api": "NODE_ENV=dev nodemon ./server/server.js",
     "start": "NODE_ENV=production nodemon ./server/server.js",
+    "postinstall": "webpack",
     "build": "webpack"
   },
   "engines": {
