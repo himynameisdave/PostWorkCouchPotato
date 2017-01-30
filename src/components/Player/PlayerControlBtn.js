@@ -1,11 +1,14 @@
 import React, { PropTypes } from 'react';
 import truncate from 'truncate';
 
+const getButtonStyles = thumb => ({ 'backgroundImage': `url('${thumb}')` });
 
-const PlayerControlBtn = ({ direction, title, handleClick }) => (
+
+const PlayerControlBtn = ({ direction, title, thumb, handleClick }) => (
     <button
       className={`player__controls__control__btn player__controls__control__btn--t--${direction}`}
       onClick={handleClick}
+      style={getButtonStyles(thumb)}
     >
         <span className="player__controls__control--text player__controls__control--text-direction">
             {direction}

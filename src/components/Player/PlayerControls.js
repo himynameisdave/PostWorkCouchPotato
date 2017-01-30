@@ -1,12 +1,13 @@
 import React, { PropTypes } from 'react';
 import PlayerControlBtn from './PlayerControlBtn';
 
-const PlayerControls = ({ nextVideoTitle, handleNextClick, prevVideoTitle, handlePrevClick, }) => (
+const PlayerControls = ({ nextVideoTitle, handleNextClick, prevVideoTitle, handlePrevClick, nextThumb, prevThumb }) => (
     <div className="player__controls">
         <div className="player__controls__control">
             <PlayerControlBtn
               direction="prev"
               title={prevVideoTitle}
+              thumb={prevThumb}
               handleClick={handlePrevClick}
               isDisabled={!prevVideoTitle}
             />
@@ -15,6 +16,7 @@ const PlayerControls = ({ nextVideoTitle, handleNextClick, prevVideoTitle, handl
             <PlayerControlBtn
               direction="next"
               title={nextVideoTitle}
+              thumb={nextThumb}
               handleClick={handleNextClick}
               isDisabled={!nextVideoTitle}
             />
@@ -27,6 +29,8 @@ PlayerControls.propTypes = {
   handleNextClick: PropTypes.func.isRequired,
   prevVideoTitle: PropTypes.string,
   handlePrevClick: PropTypes.func.isRequired,
+  nextThumb: PropTypes.string,
+  prevThumb: PropTypes.string,
 };
 
 export default PlayerControls;

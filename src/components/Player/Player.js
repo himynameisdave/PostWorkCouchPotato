@@ -57,10 +57,12 @@ class Player extends Component {
     } : this.props.goToPrevVideo;
   }
 
+  getThumbnail = video => (video && video.embed && video.embed.thumbnail) || '';
+
   render() {
     const player = this.props.player;
     const title = player && player.activeVideo && player.activeVideo.title ? player.activeVideo.title : '';
-    console.log(player.activeVideo);
+    console.log(player.activeVideo !== null ? player.activeVideo.embed : 'fartface!');
     return (
       <section className="player">
         <div className="player-l">
@@ -80,6 +82,8 @@ class Player extends Component {
               handleNextClick={this.props.goToNextVideo}
               prevVideoTitle={(player.prevVideo && player.prevVideo.title) || ''}
               handlePrevClick={this.handlePrevClick()}
+              nextThumb={this.getThumbnail(player.nextVideo)}
+              prevThumb={this.getThumbnail(player.prevVideo)}
           /> : null}
         </div>
       </section>

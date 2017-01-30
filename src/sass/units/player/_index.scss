@@ -7,9 +7,9 @@
 // Styleguide units.player
 
 .player {
-  height: 90%;
+  height: 100%;
   width: 100%;
-  padding: 2rem 0 0;
+  padding: 2rem 0;
   @media #{$media-medium} {
     max-width: 767px;
     padding: 2rem 0.5%;
@@ -28,7 +28,10 @@
   height: auto;
   width: 100%;
   &:nth-child(1) {
-    height: 80%;
+    height: 50%;
+    @media #{$media-medium} {
+      height: 65%;
+    }
   }
 }
 
@@ -36,6 +39,7 @@
   align-items: center;
   background-color: $light-black;
   border-bottom: 1px solid #fefefe;
+  border-radius: 0.2rem;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -49,8 +53,8 @@
   video,
   embed,
   div {
-    height: 100%;
-    width: 100%;
+    height: 100% !important;
+    width: 100% !important;
   }
 }
 
@@ -58,24 +62,61 @@
 .player__controls {
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  @media #{$media-medium} {
+    flex-direction: row;
+  }
 }
 
 .player__controls__control {
-  width: 48%;
-  margin: 0 1%;
-  border: 1px solid red;
+  width: 100%;
+  margin: 0;
+  @media #{$media-medium} {
+    width: 49%;
+    margin: 0 0.5%;
+  }
 }
 
 .player__controls__control__btn {
-  padding: 1rem;
+  background-color: $black;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 130%;
+  box-shadow: inset 0 0 1.35rem 0.2rem rgba(0, 0, 0, 0.85);
+  border-radius: 0.2rem;
+  color: $white;
+  cursor: pointer;
+  height: 7rem;
   width: 100%;
+  transition: box-shadow 0.4s cubic-bezier(.6,.16,0,.97),
+              background-size 0.4s cubic-bezier(.6,.16,0,.97);
+  &:hover {
+    background-size: 150%;
+    box-shadow: inset 0 0 0.9rem 0.15rem rgba(0, 0, 0, 0.6);
+  }
 }
 
-
+.player__controls__control--text {
+  display: block;
+  font-family: $font-stack-1;
+  text-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.9);
+  &-direction {
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+  &-title {
+    font-size: 0.85rem;
+    letter-spacing: 0.025rem;
+    font-weight: 700;
+  }
+}
 
 .player__infobox {
-  padding: 2rem 0;
+  padding: 1.5rem 0;
 }
 
 .player__infobox__heading {
@@ -126,7 +167,7 @@
       height: 1px;
       position: absolute;
       left: 0;
-      top: 98%;
+      top: 95%;
       width: 100%;
       transition: height 0.1s ease-out;
     }
