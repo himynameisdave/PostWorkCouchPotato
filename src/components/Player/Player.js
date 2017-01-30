@@ -62,7 +62,6 @@ class Player extends Component {
   render() {
     const player = this.props.player;
     const title = player && player.activeVideo && player.activeVideo.title ? player.activeVideo.title : '';
-    console.log(player.activeVideo !== null ? player.activeVideo.embed : 'fartface!');
     return (
       <section className="player">
         <div className="player-l">
