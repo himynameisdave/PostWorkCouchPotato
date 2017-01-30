@@ -54,7 +54,8 @@
   "scripts": {
     "test": "jest --coverage",
     "dev": "webpack-dashboard webpack-dev-server",
-    "start": "nodemon ./server/server.js",
+    "dev-api": "NODE_ENV=dev nodemon ./server/server.js",
+    "start": "NODE_ENV=production nodemon ./server/server.js",
     "build": "webpack"
   },
   "engines": {

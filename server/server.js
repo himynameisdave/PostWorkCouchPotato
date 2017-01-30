@@ -2,15 +2,17 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
 const router = require('./router.js');
-// const PORT = process.env.PORT;
-const PORT = 6868;
+let PORT = 6868;
+if (process.env.NODE_ENV === 'production') {
+  PORT = process.env.PORT || 5000;
+}
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
 //  Serve the /public/ dir
-app.use('/', express.static('public'));
+app.use('/', express.static(`${__dirname}../public`));
 //  Also serve the /api/
 app.use('/api', router);
 
