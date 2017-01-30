@@ -1,11 +1,11 @@
 import { deepEqual } from 'assert';
-import videosFetch from '../videosFetch.js';
+import videosFetch from '../videos-fetch.js';
 import { defaultVideosState } from '../defaults.js';
 import {
   fetchVideos_pending,
   fetchVideos_success,
   fetchVideos_failed,
-} from '../../actions/videosFetch.js';
+} from '../../actions/videos-fetch.js';
 
 const sampleVideo = { id: '1234', title: 'sweet ass video', score: 9001 };
 

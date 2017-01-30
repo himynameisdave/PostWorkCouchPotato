@@ -8,7 +8,7 @@ export const fetchVideos_success = payload =>
 export const fetchVideos_failed = error =>
     ({ type: 'FETCH_VIDEOS_FAILED', error });
 
-const getApiUrl = () => 'localhost:6969';
+// const getApiUrl = () => 'localhost:6969';
 // if in prod or dev?
 export const fetchVideos = after => dispatch => {
     dispatch(fetchVideos_pending());

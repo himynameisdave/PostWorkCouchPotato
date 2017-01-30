@@ -2,7 +2,7 @@ import {
   fetchVideos_pending,
   fetchVideos_success,
   fetchVideos_failed,
-} from '../videosFetch.js';
+} from '../videos-fetch.js';
 
 const actionTypes = {
   pending: 'FETCH_VIDEOS_PENDING',
