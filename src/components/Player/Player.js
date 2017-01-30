@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import PlayerDisplay from './PlayerDisplay.js';
-import PlayerControls from './PlayerControls.js'
-import PlayerInfobox from './PlayerInfobox.js';
+import PlayerDisplay from './player-display.js';
+import PlayerControls from './player-controls.js'
+import PlayerInfobox from './player-info-box.js';
 import {
   fetchVideos,
   playerLoadVideos,

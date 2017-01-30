@@ -1,6 +1,6 @@
 import { defaultVideosState } from './defaults.js';
-import videosFetch from './videosFetch.js';
-import videosPlayer from './videosPlayer.js';
+import videosFetch from './videos-fetch.js';
+import videosPlayer from './videos-player.js';
 
 
 const videos = (state = defaultVideosState, action) => {

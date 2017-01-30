@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import PlayerControlBtn from './PlayerControlBtn';
+import PlayerControlBtn from './player-control-btn.js';
 
 const PlayerControls = ({ nextVideoTitle, handleNextClick, prevVideoTitle, handlePrevClick, nextThumb, prevThumb }) => (
     <div className="player__controls">

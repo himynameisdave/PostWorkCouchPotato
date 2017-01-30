@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 // import persistState from 'redux-localstorage';
 import rootReducer from './reducers/index.js';
-import App from './components/App.js';
+import App from './components/app.js';
 import './sass/exports/default.scss';
 
 require('isomorphic-fetch');

@@ -1,4 +1,4 @@
-import addUniqueVideo from '../utils/addUniqueVideo.js';
+import addUniqueVideo from '../utils/add-unique-video.js';
 
 //  TODO: should take a default state......
 const videosFetch = (state, action) => {
