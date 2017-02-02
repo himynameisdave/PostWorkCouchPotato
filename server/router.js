@@ -1,6 +1,13 @@
-const express = require('express');
-const router = express.Router();
 require('isomorphic-fetch');
+const express = require('express');
+const makeCache = require('./cache');
+const router = express.Router();
+let cache = makeCache();
+const fetchVideos = require('./fetchVideos');
+
+
+//  TODO: break off & test this
+const beenFiveMins = time => Date.now() - time >= 300000;
 
 //  Set api headers
 router.use((req, res, next) => {
@@ -16,40 +23,30 @@ router.use((req, res, next) => {
 
 // router.use('/', (req, res) => res.json({ message: 'you are at /api/, use /api/videos' }));
 router.use('/videos', (req, res) => {
-  const baseUrl = 'https://www.reddit.com/r/videos/.json';
-  //  Build out our response object
-  fetch(baseUrl)
-    .then(redditData => redditData.json())
-    .then((redditData) => {
-      const responseObject = {
-        after: redditData.data.after,
-        before: redditData.data.before,
-        videos: redditData.data.children
-          .filter(({ data }) => data.media && data.media.oembed && data.media.oembed.html)
-          .map(({ data }) => ({
-            id: data.id, // confusing, may not need...
-            name: data.name, // similar to .id but like `t3_ai29akd`
-            author: data.author,
-            created: data.created_utc,
-            domain: data.domain,
-            embed: {
-              html: data.media.oembed.html,
-              thumbnail: data.media.oembed.thumbnail_url
-            },
-            reddit_link: data.permalink,
-            score: data.score,
-            title: data.title,
-            watchddit: {
-              watchedVideo: false,
-              isActiveVideo: false
-            }
-          }))
-      };
-      res.send(responseObject);
+
+  //  This could be done better...
+  // if (cache.videos.length && !beenFiveMins(cache.lastFetched || Date.now())) {
+  //   return res.send(cache);
+  // }
+
+  fetchVideos()
+    .then(d => {
+        console.log('She wants the d ===\n', d);
+        return d;
+    })
+    .then(responseObject => {
+        cache = responseObject;
+        res.send(responseObject);
     })
     .catch(e => res.json({
       error: `Error fetching: ${e}`
     }));
 });
+
+
+router.use('/videos/:after', (req, res) => {
+  req.params
+});
+
 
 module.exports = router;
