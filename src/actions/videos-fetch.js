@@ -10,14 +10,19 @@ export const fetchVideos_failed = error =>
 
 // const getApiUrl = () => 'localhost:6969';
 // if in prod or dev?
-export const fetchVideos = after => dispatch => {
+export const fetchVideos = after => (dispatch) => {
     dispatch(fetchVideos_pending());
     //  do url loation finding this is dev only...
-    fetch(`/api/videos`)
+    let url = 'http://localhost:5000/api/videos';
+    if (after) {
+        url = `${url}/${after}`;
+    }
+    console.info('requesting this url', url);
+    fetch(url)
         .then(d => d.json())
         .then(videos => dispatch(fetchVideos_success(videos)))
         .catch(e => {
-            console.warn('whoops shitty', e);
+            console.warn('whoops shitty', e); // Todo: better error handle
             return dispatch(fetchVideos_failed(e));
         });
 };

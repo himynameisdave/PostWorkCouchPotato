@@ -15,7 +15,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchVideos: () => dispatch(fetchVideos()),
+  fetchVideos: after => dispatch(fetchVideos(after)),
   loadVideos: () => dispatch(playerLoadVideos()),
   goToNextVideo: () => dispatch(playerNextVideo()),
   goToPrevVideo: () => dispatch(playerPrevVideo())
@@ -54,7 +54,24 @@ class Player extends Component {
   handlePrevClick = () => {
     return !this.props.player.prevVideo ? () => {
       console.log('no prev video!');
+      // TODO: DISPLAY SOM UI HERE...
     } : this.props.goToPrevVideo;
+  }
+
+  videosInQueueCount = () => {
+      //  TODO: clean this mess up:
+      const nextId = this.props.player.nextVideo && this.props.player.nextVideo.id;
+      const currentIndex = this.props.videos.reduce((a, b, i) => b.id === nextId ? i : a, -1);
+      const viewedVidsCount = this.props.videos && this.props.videos.slice(0, currentIndex).length;
+      return this.props.videos.length - viewedVidsCount;
+  }
+
+  handleNextClick = () => {
+      /// should fetch more vids????
+      if (this.props.after && this.videosInQueueCount() < 5) {
+          this.props.fetchVideos(this.props.after);
+      }
+      return this.props.goToNextVideo();
   }
 
   getThumbnail = video => (video && video.embed && video.embed.thumbnail) || '';
@@ -78,7 +95,7 @@ class Player extends Component {
         <div className="player-l">
           {player.nextVideo ? <PlayerControls
               nextVideoTitle={player.nextVideo.title}
-              handleNextClick={this.props.goToNextVideo}
+              handleNextClick={this.handleNextClick}
               prevVideoTitle={(player.prevVideo && player.prevVideo.title) || ''}
               handlePrevClick={this.handlePrevClick()}
               nextThumb={this.getThumbnail(player.nextVideo)}
