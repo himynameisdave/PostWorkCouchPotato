@@ -12,7 +12,7 @@ const TARGET = process.env.npm_lifecycle_event;
 
 const webpack_config_common = {
   entry: [
-    './src/index.js'
+    './client/index.js'
   ],
   output: {
     path: path.join(__dirname, './public/'),
@@ -25,7 +25,7 @@ const webpack_config_common = {
         test: /\.js$/,
         exclude: /\\node_modules/,
         loaders: ['babel'],
-        include: path.join(__dirname, 'src')
+        include: path.join(__dirname, 'client')
       }, {
         test: /\.json$/,
         loader: 'json'
@@ -33,11 +33,11 @@ const webpack_config_common = {
         test: /\.jsx?$/,
         exclude: /\\node_modules/,
         loaders: ['babel'],
-        include: path.join(__dirname, 'src')
+        include: path.join(__dirname, 'client')
       }, {
         test: /\.scss$/,
         loaders: ['style', 'css', 'postcss', 'sass'],
-        include: path.join(__dirname, 'src/sass')
+        include: path.join(__dirname, 'client/sass')
       }
     ]
   },
