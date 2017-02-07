@@ -1,6 +1,6 @@
 //  TODO: not the best spot for this file
 require('isomorphic-fetch');
-const URLs = require('./urls.js');
+const URLs = require('../helpers/constants/urls.js');
 
 /*
 ////////
