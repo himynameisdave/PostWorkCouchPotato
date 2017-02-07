@@ -4,6 +4,7 @@
   "description": "A simple way to watch r/videos.",
   "scripts": {
     "test": "jest --coverage",
+    "test-report": "open ./coverage/lcov-report/index.html -a Google\\ Chrome",
     "dev": "webpack-dashboard webpack-dev-server",
     "dev-api": "NODE_ENV=dev nodemon ./server/server.js",
     "start": "NODE_ENV=production nodemon ./server/server.js",

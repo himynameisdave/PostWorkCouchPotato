@@ -33,7 +33,7 @@ router.get('/videos', (req, res) => {
     return res.send(relevantCache);
   }
 
-  fetchVideos('videos')
+  return fetchVideos('videos')
     .then(updateCache)
     .then(d => res.send(d))
     .catch(e => res.json({
@@ -50,7 +50,7 @@ router.get('/videos/:after', (req, res) => {
         return res.send(relevantCache);
     }
 
-    fetchVideos('videos', req.params.after)
+    return fetchVideos('videos', req.params.after)
       .then(updateCache)
       .then(d => res.send(d))
       .catch(e => res.json({

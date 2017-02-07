@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-// import persistState from 'redux-localstorage';
+import persistState from 'redux-localstorage';
 import rootReducer from './reducers/index.js';
 import App from './components/app.js';
 import './sass/exports/default.scss';
@@ -13,6 +13,7 @@ require('isomorphic-fetch');
 
 //  break off into own module
 //  returns true if given lastFetched has been in the last given # of mins
+//  TODO: this exists elsewhere as "been(3).mins()"
 const minutesSince = (lastFetched, mins) => {
   const minsInMilliseconds = mins * 60 * 1000;
   return Date.now() - lastFetched >= minsInMilliseconds;
@@ -37,10 +38,12 @@ const store = createStore(
     applyMiddleware(
       thunk
     ),
-    // persistState(),
+    persistState(),
     window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 );
+
+window._getState = store.getState();
 
 //  if !process.env.PRODUCTION
 window.state = store.getState();
