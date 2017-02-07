@@ -1,4 +1,4 @@
-const setRequestHeaders = require('../utils/setRequestHeaders.js');
+const setRequestHeaders = require('../utils/set-request-headers.js');
 
 describe('server/setRequestHeaders', () => {
     const req = null;

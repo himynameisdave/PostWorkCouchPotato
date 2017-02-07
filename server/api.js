@@ -1,9 +1,9 @@
 require('isomorphic-fetch');
 const express = require('express');
-const setRequestHeaders = require('./utils/setRequestHeaders.js');
+const setRequestHeaders = require('./utils/set-request-headers.js');
 const URLs = require('../helpers/constants/urls.js');
 const makeCache = require('./cache');
-const fetchVideos = require('./fetchVideos');
+const fetchVideos = require('./fetch-videos');
 
 const router = express.Router();
 let cache = makeCache();

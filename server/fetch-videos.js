@@ -1,16 +1,7 @@
 //  TODO: not the best spot for this file
 require('isomorphic-fetch');
 const makeRedditUrl = require('../helpers/utils/make-reddit-url.js');
-const extractVideosFromResponse = require('./utils/extract-videos-from-response');
-
-
-const formatRedditResponse = url => ({ data }) => ({
-    url,
-    lastFetched: Date.now(),
-    after: data.after,
-    before: data.before,
-    videos: extractVideosFromResponse(data.children),
-});
+const formatRedditResponse = require('./utils/format-reddit-response.js');
 
 
 const fetchVideos = (sub = 'videos', after) => {
