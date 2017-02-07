@@ -1,5 +1,5 @@
 const express = require('express');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 const app = express();
 const api = require('./api.js');
 let PORT = 6868;
@@ -17,5 +17,5 @@ app.use('/', express.static('public'));
 app.use('/api', api);
 
 app.listen(PORT, () => {
-  console.log(`API listening on port ${PORT}`);
+    console.log(`API listening on port ${PORT}`);
 });
