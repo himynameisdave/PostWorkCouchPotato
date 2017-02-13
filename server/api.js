@@ -2,17 +2,12 @@ require('isomorphic-fetch');
 const express = require('express');
 const setRequestHeaders = require('./utils/set-request-headers.js');
 const URLs = require('../helpers/constants/urls.js');
+const been = require('../helpers/utils/been.js');
 const makeCache = require('./cache');
 const fetchVideos = require('./fetch-videos');
 
 const router = express.Router();
 let cache = makeCache();
-
-
-//  TODO: break off & test this
-const beenFiveMins = time => Date.now() - time >= 300000;
-
-const been = since => ({ mins: time => Date.now() - time > (since * 60 * 1000) });
 
 //  has side effects, could be better...
 const updateCache = (data) => {
@@ -20,7 +15,7 @@ const updateCache = (data) => {
   return data;
 };
 
-const isCacheValid = _cache => _cache.videos.length && !been(3).mins(_cache.lastFetched || Date.now());
+const isCacheValid = _cache => _cache.videos.length && !been(1).mins.since(_cache.lastFetched || Date.now());
 
 
 //  Set api headers

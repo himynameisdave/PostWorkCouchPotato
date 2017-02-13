@@ -1,4 +1,8 @@
 import addUniqueVideo from '../utils/add-unique-video.js';
+import been from '../../helpers/utils/been.js';
+
+const filterVideoIfStale = video => been(10).mins.since(video.fetchedAt);
+
 
 //  TODO: should take a default state......
 const videosFetch = (state, action) => {
@@ -11,7 +15,7 @@ const videosFetch = (state, action) => {
         isFetching: false,
         lastFetched: Date.now(),
         after: action.payload.after,
-        videos: addUniqueVideo(state.videos, action.payload.videos)
+        videos: addUniqueVideo(state.videos.filter(filterVideoIfStale), action.payload.videos)
       };
     case 'FETCH_VIDEOS_FAILED':
       return {

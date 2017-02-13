@@ -9,6 +9,7 @@ import {
   playerNextVideo,
   playerPrevVideo,
 } from '../../actions/';
+import been from '../../../helpers/utils/been.js';
 
 const mapStateToProps = (state) => ({
   ...state.videos
@@ -27,6 +28,7 @@ class Player extends Component {
   static propTypes = {
     after: PropTypes.string.isRequired,
     videos: PropTypes.arrayOf(PropTypes.object).isRequired,
+
     player: PropTypes.shape({
       activeVideo: PropTypes.object,
       nextVideo: PropTypes.object,
@@ -39,16 +41,31 @@ class Player extends Component {
   };
 
   componentWillMount() {
-    //  TODO:  do a "lastFetched" check
-    // if (!this.props.activeVideo.id) {
-      this.props.fetchVideos();
-    // }
+      if (this.shouldFetchNewVideos()) {
+          console.info('\n==========\nFETCHING NEW VIDS!\n==========\n' );
+          if (this.props.player && this.props.player.nextVideo) {
+              return this.props.fetchVideos(this.props.player.nextVideo.name);
+          }
+          this.props.fetchVideos();
+      }
   }
 
   componentDidUpdate() {
     if (this.props.videos.length && !this.props.player.activeVideo) {
       this.props.loadVideos();
     }
+  }
+
+  getThumbnail = video => (video && video.embed && video.embed.thumbnail) || '';
+
+  handleNextClick = () => {
+      /// should fetch more vids????
+      if (this.props.after && this.videosInQueueCount() < 5) {
+          console.warn('\n\ndafug u doin mang?!\n', this.videosInQueueCount());
+
+          this.props.fetchVideos(this.props.after);
+      }
+      return this.props.goToNextVideo();
   }
 
   handlePrevClick = () => {
@@ -59,22 +76,18 @@ class Player extends Component {
   }
 
   videosInQueueCount = () => {
-      //  TODO: clean this mess up:
-      const nextId = this.props.player.nextVideo && this.props.player.nextVideo.id;
-      const currentIndex = this.props.videos.reduce((a, b, i) => b.id === nextId ? i : a, -1);
-      const viewedVidsCount = this.props.videos && this.props.videos.slice(0, currentIndex).length;
-      return this.props.videos.length - viewedVidsCount;
+      const { videos, player } = this.props;
+      const nextId = player.nextVideo.id;
+      const indNext = videos.reduce((a, b, i) => {
+          if (b.id === nextId) a = i;
+          return a;
+      }, -1)
+      return videos.length - indNext;
   }
 
-  handleNextClick = () => {
-      /// should fetch more vids????
-      if (this.props.after && this.videosInQueueCount() < 5) {
-          this.props.fetchVideos(this.props.after);
-      }
-      return this.props.goToNextVideo();
+  shouldFetchNewVideos = () => {
+      return been(10).mins.since(this.props.lastFetched) || !this.props.player.activeVideo;
   }
-
-  getThumbnail = video => (video && video.embed && video.embed.thumbnail) || '';
 
   render() {
     const player = this.props.player;
