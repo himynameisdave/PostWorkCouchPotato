@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"  />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta name="description" content="">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-title" content="watchddit">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  </head>
+  <body>
+<!--
+               _       _         _     _ _ _
+__      ____ _| |_ ___| |__   __| | __| (_) |_
+\ \ /\ / / _` | __/ __| '_ \ / _` |/ _` | | __|
+ \ V  V / (_| | || (__| | | | (_| | (_| | | |_
+  \_/\_/ \__,_|\__\___|_| |_|\__,_|\__,_|_|\__|
+    -->
+    <main id="<%= htmlWebpackPlugin.options.appMountId %>" class="<%= htmlWebpackPlugin.options.appMountId %>"></main>
+    <script type="text/javascript">
+      // (function() {
+      //     if('serviceWorker' in navigator) {
+      //         navigator.serviceWorker.register('./watchddit-sw.js')
+      //           .then(sw => console.info('ServiceWorker registered!'));
+      //           .catch(console.warn)
+      //     }
+      // })();
+    </script>
+  </body>
+</html>
