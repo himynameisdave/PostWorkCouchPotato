@@ -16,10 +16,10 @@ module.exports = {
           'NODE_ENV': JSON.stringify('production') // eslint-disable-line
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: true
-      }
-    })
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     warnings: true
+    //   }
+    // })
   ]
 };
