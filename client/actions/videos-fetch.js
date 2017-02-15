@@ -12,8 +12,11 @@ export const fetchVideos_failed = error =>
 // if in prod or dev?
 export const fetchVideos = after => (dispatch) => {
     dispatch(fetchVideos_pending());
+    let url = 'http://localhost:5000/api/videos'
     //  do url loation finding this is dev only...
-    let url = 'http://localhost:5000/api/videos';
+    if (process.env.NODE_ENV === 'production') {
+        url = '/api/videos';
+    }
     if (after) {
         url = `${url}/${after}`;
     }
